@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-namespace WebApp.Models
+﻿using System.ComponentModel.DataAnnotations;
+namespace Vendas.WebApp.Models
 {
     public class Venda
     {
@@ -11,5 +9,4 @@ namespace WebApp.Models
         public int ClienteId { get; set; }
         virtual public Cliente Cliente { get; set; }
     }
-
 }

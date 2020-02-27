@@ -1,5 +1,5 @@
 ﻿using System;
-namespace WebApp.Controllers.Exceptions
+namespace Vendas.WebApp.Controllers.Exceptions
 {
     public class DbConcurrencyException : ApplicationException
     {

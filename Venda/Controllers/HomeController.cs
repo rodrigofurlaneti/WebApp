@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApp.DAL;
-namespace WebApp.Controllers
+using Vendas.WebApp.DAL;
+namespace Vendas.WebApp.Controllers
 {
     public class HomeController : Controller
     {

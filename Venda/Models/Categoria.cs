@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
-namespace WebApp.Models
+namespace Vendas.WebApp.Models
 {
     public class Categoria
     {

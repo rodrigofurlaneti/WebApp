@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using WebApp.DAL;
-using WebApp.Models;
-namespace WebApp.Service
+using Vendas.WebApp.DAL;
+using Vendas.WebApp.Models;
+namespace Vendas.WebApp.Service
 {
     public class PedidoService
     {

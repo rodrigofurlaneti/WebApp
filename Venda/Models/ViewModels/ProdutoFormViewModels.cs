@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-namespace WebApp.Models.ViewModels
+namespace Vendas.WebApp.Models.ViewModels
 {
     public class ProdutoFormViewModels
     {

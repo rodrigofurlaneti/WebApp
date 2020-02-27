@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApp.Service;
-namespace WebApp.Controllers
+using Vendas.WebApp.Service;
+namespace Vendas.WebApp.Controllers
 {
     public class PedidoController : Controller
     {

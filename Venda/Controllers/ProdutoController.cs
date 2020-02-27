@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApp.Controllers.Exceptions;
-using WebApp.Models;
-using WebApp.Models.ViewModels;
-using WebApp.Service;
+using Vendas.WebApp.Controllers.Exceptions;
+using Vendas.WebApp.Models;
+using Vendas.WebApp.Models.ViewModels;
+using Vendas.WebApp.Service;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-
-namespace WebApp.Controllers
+namespace Vendas.WebApp.Controllers
 {
     public class ProdutoController : Controller
     {

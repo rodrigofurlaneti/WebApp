@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
-using WebApp.Controllers.Exceptions;
-using WebApp.Models;
-using WebApp.Models.ViewModels;
-using WebApp.Service;
-namespace WebApp.Controllers
+using Vendas.WebApp.Controllers.Exceptions;
+using Vendas.WebApp.Models;
+using Vendas.WebApp.Models.ViewModels;
+using Vendas.WebApp.Service;
+namespace Vendas.WebApp.Controllers
 {
     public class VendaController : Controller
     {

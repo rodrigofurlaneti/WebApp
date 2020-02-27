@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApp.DAL;
-using WebApp.Controllers.Exceptions;
-using WebApp.Models;
-namespace WebApp.Service
+using Vendas.WebApp.DAL;
+using Vendas.WebApp.Controllers.Exceptions;
+using Vendas.WebApp.Models;
+namespace Vendas.WebApp.Service
 {
     public class CargoService
     {
