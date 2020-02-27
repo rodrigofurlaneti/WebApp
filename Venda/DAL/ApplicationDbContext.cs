@@ -11,6 +11,7 @@ namespace Vendas.WebApp.DAL
         public DbSet<Venda> Venda { get; set; }
         public DbSet<Cargo> Cargo { get; set; }
         public DbSet<VendaProduto> VendaProduto { get; set; }
+        public DbSet<Comanda> Comanda { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) {}
     }
 }

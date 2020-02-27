@@ -1,0 +1,25 @@
+﻿@model Vendas.WebApp.Models.Comanda
+@{
+    ViewData["Title"] = "Detalhar comanda";
+}
+<h2 class="display-4">Detalhar comanda</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Id
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            Cliente
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClienteId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-sm btn-secondary">Voltar</a>
+</div>

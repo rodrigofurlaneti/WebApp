@@ -60,3 +60,7 @@ C:\Users\Administrador\source\repos\Venda\WebApp\Venda\obj\Debug\netcoreapp2.1\V
 C:\Users\Administrador\source\repos\Venda\WebApp\Venda\obj\Debug\netcoreapp2.1\Venda.WebApp.dll
 C:\Users\Administrador\source\repos\Venda\WebApp\Venda\obj\Debug\netcoreapp2.1\Venda.WebApp.pdb
 C:\Users\Administrador\source\repos\Venda\WebApp\Venda\obj\Debug\netcoreapp2.1\Venda.WebApp.csproj.CopyComplete
+C:\Users\Administrador\source\repos\Venda\WebApp\Venda\obj\Debug\netcoreapp2.1\Razor\Views\Comanda\Create.g.cshtml.cs
+C:\Users\Administrador\source\repos\Venda\WebApp\Venda\obj\Debug\netcoreapp2.1\Razor\Views\Comanda\Delete.g.cshtml.cs
+C:\Users\Administrador\source\repos\Venda\WebApp\Venda\obj\Debug\netcoreapp2.1\Razor\Views\Comanda\Details.g.cshtml.cs
+C:\Users\Administrador\source\repos\Venda\WebApp\Venda\obj\Debug\netcoreapp2.1\Razor\Views\Comanda\Index.g.cshtml.cs

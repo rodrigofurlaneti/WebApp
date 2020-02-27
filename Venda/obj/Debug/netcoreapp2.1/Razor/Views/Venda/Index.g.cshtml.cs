@@ -65,7 +65,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("<h2 class=\"display-4\">Venda</h2>\r\n<p>\r\n    ");
             EndContext();
             BeginContext(133, 47, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae489b32ab3e4f79bdc2735735c806c3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e591441dcb394545b9603a0c9a0eb7f7", async() => {
                 BeginContext(156, 20, true);
                 WriteLiteral("Adicionar nova Venda");
                 EndContext();
@@ -87,7 +87,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("\r\n</p>\r\n");
             EndContext();
             BeginContext(188, 305, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e45a1d6542146a8ae75484ab08ac59a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f0e416cc050410d85497ef0aa9dcc30", async() => {
                 BeginContext(214, 272, true);
                 WriteLiteral(@"
     <div class=""form-group mb-2"">
@@ -187,7 +187,7 @@ WriteAttributeValue("", 948, item.Id, 948, 8, false);
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(1286, 87, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "55749cb7623a45649b53c8c93db1fde8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e99f05e54f9e4ab8b496b8c18d0ebe51", async() => {
                 BeginContext(1363, 6, true);
                 WriteLiteral("Apagar");
                 EndContext();

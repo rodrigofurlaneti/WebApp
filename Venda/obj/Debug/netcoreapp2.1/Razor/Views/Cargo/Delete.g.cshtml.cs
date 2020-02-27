@@ -74,7 +74,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("?</h5>\r\n");
             EndContext();
             BeginContext(232, 109, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c280cbebb3a7449fb2c71b1ce6018163", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c6d603f159d4d07ace76603f5ef9300", async() => {
                 BeginContext(258, 76, true);
                 WriteLiteral("\r\n    <input type=\"submit\" value=\"Apagar\" class=\"btn btn-sm btn-danger\" />\r\n");
                 EndContext();
@@ -98,7 +98,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("\r\n<div>\r\n    ");
             EndContext();
             BeginContext(354, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d560c2fd25154717a23ec00056a222f6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd0e44031834cd78960bf04128c92fc", async() => {
                 BeginContext(409, 6, true);
                 WriteLiteral("Voltar");
                 EndContext();

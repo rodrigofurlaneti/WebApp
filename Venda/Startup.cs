@@ -36,6 +36,7 @@ namespace Vendas.WebApp
             services.AddScoped<VendaProdutoService>();
             services.AddScoped<PedidoService>();
             services.AddScoped<PedidoContext>();
+            services.AddScoped<ComandaService>();
         }
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
