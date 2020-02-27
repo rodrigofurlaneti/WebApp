@@ -1,0 +1,33 @@
+﻿@model Vendas.WebApp.Models.ViewModels.ComandaFormViewModels
+@{
+    ViewData["Title"] = "Editar comanda";
+}
+<h2 class="display-4">Editar comanda</h2>
+<form asp-action="Edit">
+    <input asp-for="@Model.Comanda.Id" type="hidden" class="form-control form-control-sm" />
+    <div class="form-row">
+        <div class="form-group-sm col-md-2">
+            <div class="form-group">
+                <label asp-for="@Model.Comanda.Id" class="control-label">Comanda número:</label>
+                <input asp-for="@Model.Comanda.Id" type="text" class="form-control form-control-sm" disabled/>
+            </div>
+        </div>
+        <div class="form-group-sm col-md-10">
+            <div class="form-group">
+                <label asp-for="@Model.Comanda.ClienteId" class="control-label">Nome do cliente:</label>
+                <select asp-for="@Model.Comanda.ClienteId" asp-items="@(new SelectList(Model.Clientes,"Id","Nome"))" class="form-control form-control-sm"></select>
+                <span asp-validation-for="@Model.Comanda.ClienteId" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-row botao">
+        <div class="col-md-11">
+            <a asp-action="Index">
+                <input type="button" value="Voltar" class="btn btn-sm btn-secondary" />
+            </a>
+        </div>
+        <div class="col-md-1">
+            <input type="submit" value="Salvar" class="btn btn-sm btn-success" />
+        </div>
+    </div>
+</form>

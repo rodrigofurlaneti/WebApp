@@ -9,7 +9,7 @@
 <form class="form-inline">
     <div class="form-group mb-2">
         <label for="input>NomeDaCargo" class="sr-only">Nome da comanda</label>
-        <input type="text" class="form-control form-control-sm" id="myInput" onkeyup="myFunctionFiltroNomeCargo()" placeholder="Nome da Cargo">
+        <input type="text" class="form-control form-control-sm" id="myInput" onkeyup="myFunctionFiltroNomeCargo()" placeholder="Nome do cliente">
     </div>
 </form>
 
@@ -45,7 +45,7 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ClienteId)
+                @Html.DisplayFor(modelItem => item.Cliente.Nome)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Data)
@@ -64,7 +64,7 @@
     </tbody>
 </table>
 <div class="form-group quantTd mb-6">
-    <label>Quantidade de cargos:</label>
+    <label>Quantidade de comandas:</label>
     <label id="quantTd"></label>
 </div>
 <script>

@@ -3,15 +3,18 @@ using System;
 using System.Threading.Tasks;
 using Vendas.WebApp.Controllers.Exceptions;
 using Vendas.WebApp.Models;
+using Vendas.WebApp.Models.ViewModels;
 using Vendas.WebApp.Service;
 namespace Vendas.WebApp.Controllers
 {
     public class ComandaController : Controller
     {
         private readonly ComandaService _comandaService;
-        public ComandaController(ComandaService comandaService)
+        private readonly ClienteService _clienteService;
+        public ComandaController(ComandaService comandaService, ClienteService clienteService)
         {
             _comandaService = comandaService;
+            _clienteService = clienteService;
         }
 
         //Index - Assincrono
@@ -21,9 +24,11 @@ namespace Vendas.WebApp.Controllers
         }
 
         //Create - Sincrono
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            return View();
+            var clientes = await _clienteService.FindAllAsync();
+            var viewModel = new ComandaFormViewModels { Clientes = clientes };
+            return View(viewModel);
         }
 
         //Create - Assincrono
@@ -85,7 +90,9 @@ namespace Vendas.WebApp.Controllers
             {
                 return NotFound();
             }
-            return View(comanda);
+            var clientes = await _clienteService.FindAllAsync();
+            var viewModel = new ComandaFormViewModels { Comanda = comanda, Clientes = clientes };
+            return View(viewModel);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -97,6 +104,7 @@ namespace Vendas.WebApp.Controllers
             }
             try
             {
+                comanda.Data = DateTime.Now.ToString();
                 await _comandaService.Update(comanda);
                 return RedirectToAction(nameof(Index));
             }

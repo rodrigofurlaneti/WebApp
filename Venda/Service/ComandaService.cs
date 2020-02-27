@@ -29,7 +29,7 @@ namespace Vendas.WebApp.Service
         //Assincrono - FindAllAsync()
         public async Task<List<Comanda>> FindAllAsync()
         {
-            return await context.Comanda.ToListAsync();
+            return await context.Comanda.Include(x => x.Cliente).ToListAsync();
         }
 
         //Assincrono - InsertAsync(Comanda obj)
@@ -42,13 +42,13 @@ namespace Vendas.WebApp.Service
         //Sincrono - FindById(int id)
         public Comanda FindById(int id)
         {
-            return context.Comanda.FirstOrDefault(o => o.Id == id);
+            return context.Comanda.Include(x => x.Cliente).FirstOrDefault(o => o.Id == id);
         }
 
         //Assincrono
         public async Task<Comanda> FindByIdAsync(int id)
         {
-            return await context.Comanda.FirstOrDefaultAsync(o => o.Id == id);
+            return await context.Comanda.Include(x => x.Cliente).FirstOrDefaultAsync(o => o.Id == id);
         }
 
         //Assincrono
