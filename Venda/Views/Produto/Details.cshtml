@@ -1,0 +1,43 @@
+﻿@model WebApp.Models.ViewModels.ProdutoFormViewModels
+@{
+    ViewData["Title"] = "Detalhar produto";
+}
+<h2 class="display-4">Detalhar produto</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Codigo
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produto.Id)
+        </dd>
+        <dt>
+            Nome
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produto.Nome)
+        </dd>
+        <dt>
+            Qunatidade
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produto.Quantidade)
+        </dd>
+        <dt>
+            Valor
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produto.Valor)
+        </dd>
+        <dt>
+            Categoria
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CategoriaObj.Nome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-sm btn-secondary">Voltar</a>
+</div>

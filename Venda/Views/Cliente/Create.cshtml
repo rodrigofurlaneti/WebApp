@@ -1,0 +1,51 @@
+﻿@model WebApp.Models.Cliente
+@{ 
+    ViewData["Title"] = "Adicionar Cliente";
+}
+<h2 class="display-4">Adicionar Cliente</h2>
+<form asp-action="Create">
+    <input asp-for="@Model.Id" type="hidden" class="form-control form-control-sm" />
+    <div class="form-row">
+        <div class="form-group-sm col-md-3">
+            <div class="form-group">
+                <label asp-for="@Model.Nome" class="control-label">Nome:</label>
+                <input asp-for="@Model.Nome" class="form-control form-control-sm" />
+                <span asp-validation-for="@Model.Nome" class="text-danger"></span>
+
+            </div>
+        </div>
+        <div class="form-group-sm col-md-3">
+            <div class="form-group">
+                <label asp-for="@Model.Cpf" class="control-label">Cpf:</label>
+                <input asp-for="@Model.Cpf" maxlength="11" class="form-control form-control-sm" />
+                <span asp-validation-for="@Model.Cpf" class="text-danger"></span>
+
+            </div>
+        </div>
+        <div class="form-group-sm col-md-3">
+            <div class="form-group">
+                <label asp-for="@Model.Email" class="control-label">E-mail:</label>
+                <input asp-for="@Model.Email" class="form-control form-control-sm" />
+                <span asp-validation-for="@Model.Email" class="text-danger"></span>
+
+            </div>
+        </div>
+        <div class="form-group-sm col-md-3">
+            <div class="form-group">
+                <label asp-for="@Model.Celular" class="control-label">Celular:</label>
+                <input asp-for="@Model.Celular" maxlength="11" class="form-control form-control-sm" />
+                <span asp-validation-for="@Model.Celular" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-row botao">
+        <div class="col-md-11">
+            <a asp-action="Index">
+                <input type="button" value="Voltar" class="btn btn-sm btn-secondary" />
+            </a>
+        </div>
+        <div class="col-md-1">
+            <input type="submit" value="Salvar" class="btn btn-sm btn-success" />
+        </div>
+    </div>
+</form>

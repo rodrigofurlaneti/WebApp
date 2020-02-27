@@ -1,0 +1,29 @@
+﻿@model WebApp.Models.ViewModels.VendaFormViewModels
+@{
+    ViewData["Title"] = "Adicionar venda";
+}
+<h2 class="display-4">Adicionar venda</h2>
+<form asp-action="Create">
+    <div class="form-row">
+        <div class="form-group-sm col-md-12">
+            <div class="form-group">
+                <label asp-for="@Model.Venda.ClienteId" class="control-label">Cliente:</label>
+                <select asp-for="@Model.Venda.ClienteId" asp-items="@(new SelectList(Model.Clientes, "Id", "Nome"))" class="form-control form-control-sm"></select>
+                <span asp-validation-for="@Model.Venda.ClienteId" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-row botao">
+        <div class="col-md-11">
+            <a asp-action="Index">
+                <input type="button" value="Voltar" class="btn btn-sm btn-secondary" />
+            </a>
+        </div>
+        <div class="col-md-1">
+            <input type="submit" value="Salvar" class="btn btn-sm btn-success" />
+        </div>
+    </div>
+    <div class="form-row">
+
+    </div>
+</form>

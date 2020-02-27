@@ -1,0 +1,43 @@
+﻿@model IEnumerable<WebApp.Models.Pedido>;
+@{
+    ViewData["Title"] = "Pedido";
+}
+<h2 class="display-4">Pedido</h2>
+<table class="table" id="myTable">
+    <thead>
+        <tr class="col-12">
+            <th>
+                Produto
+            </th>
+            <th>
+                Quantidade
+            </th>
+            <th>
+                Nome
+            </th>
+            <th>
+                Data
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Produto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

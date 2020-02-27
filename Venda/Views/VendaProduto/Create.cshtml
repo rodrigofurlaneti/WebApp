@@ -1,0 +1,41 @@
+﻿@model WebApp.Models.ViewModels.VendaProdutoFormViewModels
+@{
+    ViewData["Title"] = "Adicionar venda produto";
+}
+<h2 class="display-4">Adicionar venda produto</h2>
+<form asp-action="Create">
+    <input asp-for="@Model.VendaProduto.VendaId" type="hidden" value="VendaId" id="VendaProduto.VendaId" class="form-control form-control-sm" />
+    <div class="form-row">
+        <div class="form-group-sm col-md-6">
+            <div class="form-group">
+                <label asp-for="@Model.VendaProduto.ProdutoId" class="control-label">Produto:</label>
+                <select asp-for="@Model.VendaProduto.ProdutoId" asp-items="@(new SelectList(Model.Produto,"Id","Nome"))" class="form-control form-control-sm"></select>
+                <span asp-validation-for="@Model.VendaProduto.ProdutoId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group-sm col-md-6">
+            <div class="form-group">
+                <label asp-for="@Model.VendaProduto.Quantidade" class="control-label">Quantidade:</label>
+                <input asp-for="@Model.VendaProduto.Quantidade" type="number" class="form-control form-control-sm"></input>
+                <span asp-validation-for="@Model.VendaProduto.Quantidade" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-row botao">
+        <div class="col-md-12">
+            <input type="submit" value="Enviar" class="btn btn-sm btn-success" />
+        </div>
+    </div>
+</form>
+<script>
+    var params = window.location.search.substring(1).split('&');
+    var paramArray = {};
+    for (var i = 0; i < params.length; i++) {
+        var param = params[i].split('=');
+        paramArray[param[0]] = param[1];
+    }
+    console.log(paramArray);
+    var VendaId = paramArray['VendaId'];
+    console.log(VendaId);
+    document.querySelector("[name='VendaProduto.VendaId']").value = VendaId;
+</script>
