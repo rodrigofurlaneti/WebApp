@@ -38,10 +38,12 @@ namespace Vendas.WebApp.Service
         //Assincrono - InsertAsync(Venda Venda)
         public async Task InsertAsync(VendaProduto vendaproduto)
         {
-            context.Add(vendaproduto);
             int idProduto = vendaproduto.ProdutoId;
             int quantProdutoPedido = vendaproduto.Quantidade;
             produtocontext.DeleteProduto(idProduto, quantProdutoPedido);
+            decimal valor = produtocontext.ValorUnitario(idProduto);
+            vendaproduto.Valor = valor * quantProdutoPedido;
+            context.Add(vendaproduto);
             await context.SaveChangesAsync();
         }
 

@@ -8,5 +8,6 @@
         virtual public Produto Produto { get; set; }
         public int Quantidade { get; set; }
         virtual public Venda Venda { get; set; }
+        public decimal Valor { get; set; }
     }
 }

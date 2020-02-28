@@ -5,6 +5,28 @@ namespace Vendas.WebApp.DAL
     public class ProdutoContext
     {
         string _ConnectionString = "Server=.;Database=estoque;Trusted_Connection=True;MultipleActiveResultSets=true";
+        public decimal ValorUnitario(int id)
+        {
+            decimal valorUnitario;
+            SqlConnection sqlConnection = new SqlConnection(_ConnectionString);
+            try
+            {
+                sqlConnection.Open();
+                string sql = "SELECT [estoque].[dbo].[Produto].[Valor] FROM [estoque].[dbo].[Produto] WHERE [estoque].[dbo].[Produto].[Id] = " + id + ";";
+                SqlCommand cmd = new SqlCommand(sql, sqlConnection);
+                valorUnitario = (decimal)cmd.ExecuteScalar();
+                return valorUnitario;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
         public int QuantProduto(int id)
         {
             int quant;
