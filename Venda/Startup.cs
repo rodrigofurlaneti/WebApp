@@ -32,6 +32,7 @@ namespace Vendas.WebApp
             services.AddScoped<ClienteService>();
             services.AddScoped<UsuarioService>();
             services.AddScoped<ProdutoService>();
+            services.AddScoped<ProdutoContext>();
             services.AddScoped<VendaService>();
             services.AddScoped<VendaProdutoService>();
             services.AddScoped<PedidoService>();

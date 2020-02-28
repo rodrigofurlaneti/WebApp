@@ -10,11 +10,11 @@ namespace Vendas.WebApp.Controllers
     public class VendaController : Controller
     {
         private readonly VendaService _vendaService;
-        private readonly ClienteService _clienteService;
-        public VendaController(VendaService vendaService, ClienteService clienteService)
+        private readonly ComandaService _comandaService;
+        public VendaController(VendaService vendaService, ComandaService comandaService)
         {
             _vendaService = vendaService;
-            _clienteService = clienteService;
+            _comandaService = comandaService;
         }
         public async Task<IActionResult> Index()
         {
@@ -23,8 +23,8 @@ namespace Vendas.WebApp.Controllers
         //Create - Assincrono
         public async Task<IActionResult> Create()
         {
-            var cliente = await _clienteService.FindAllAsync();
-            var viewModel = new VendaFormViewModels { Clientes = cliente };
+            var comandas = await _comandaService.FindAllAsync();
+            var viewModel = new VendaFormViewModels { Comandas = comandas };
             return View(viewModel);
         }
         //Create - Assincrono
@@ -34,7 +34,7 @@ namespace Vendas.WebApp.Controllers
         {
             venda.Data = DateTime.Now.ToString();
             await _vendaService.InsertAsync(venda);
-            return RedirectToAction("Create", "VendaProduto", new { VendaId = venda.Id , venda.ClienteId});
+            return RedirectToAction("Create", "VendaProduto", new { VendaId = venda.Id });
             //return RedirectToAction(nameof(Index));
         }
 

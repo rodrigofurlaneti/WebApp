@@ -65,3 +65,4 @@ C:\Users\Administrador\source\repos\Venda\WebApp\Venda\obj\Debug\netcoreapp2.1\R
 C:\Users\Administrador\source\repos\Venda\WebApp\Venda\obj\Debug\netcoreapp2.1\Razor\Views\Comanda\Details.g.cshtml.cs
 C:\Users\Administrador\source\repos\Venda\WebApp\Venda\obj\Debug\netcoreapp2.1\Razor\Views\Comanda\Index.g.cshtml.cs
 C:\Users\Administrador\source\repos\Venda\WebApp\Venda\obj\Debug\netcoreapp2.1\Razor\Views\Comanda\Edit.g.cshtml.cs
+C:\Users\Administrador\source\repos\Venda\WebApp\Venda\obj\Debug\netcoreapp2.1\Razor\Views\Venda\Edit.g.cshtml.cs

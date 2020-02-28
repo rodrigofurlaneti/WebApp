@@ -19,14 +19,17 @@ namespace Vendas.WebApp.DAL
                                     "[estoque].[dbo].[Produto].[Nome] as Produto" +
                                     ",[estoque].[dbo].[VendaProduto].[Quantidade]" +
                                     ",[estoque].[dbo].[Cliente].[Nome]" +
+                                    ",[estoque].[dbo].[Comanda].[Id] as Comanda" +
                                     ",[estoque].[dbo].[Venda].[Data]" +
                                     "FROM[estoque].[dbo].[VendaProduto]" +
                                     "INNER JOIN[estoque].[dbo].[Produto]" +
                                     "ON[estoque].[dbo].[VendaProduto].[ProdutoId] = [estoque].[dbo].[Produto].[Id]" +
-                                    "INNER JOIN[estoque].[dbo].[venda]" +
+                                    "INNER JOIN[estoque].[dbo].[Venda]" +
                                     "ON[estoque].[dbo].[VendaProduto].[VendaId] = [estoque].[dbo].[Venda].[Id]" +
-                                    "INNER JOIN[estoque].[dbo].[cliente]" +
-                                    "ON[estoque].[dbo].[Venda].[ClienteId] = [estoque].[dbo].[Cliente].[Id]" +
+                                    "INNER JOIN[estoque].[dbo].[Comanda]" +
+                                    "ON[estoque].[dbo].[Venda].[ComandaId] = [estoque].[dbo].[Comanda].[Id]" +
+                                    "INNER JOIN[estoque].[dbo].[Cliente]" +
+                                    "ON[estoque].[dbo].[Comanda].[ClienteId] = [estoque].[dbo].[Cliente].[Id]" +
                                     "ORDER BY [estoque].[dbo].[Venda].[Data] DESC;";
                 SqlCommand cmd = new SqlCommand(sql, sqlConnection);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -37,6 +40,7 @@ namespace Vendas.WebApp.DAL
                         Produto = dr["Produto"].ToString(),
                         Quantidade = dr["Quantidade"].ToString(),
                         Nome = dr["Nome"].ToString(),
+                        Comanda = dr["Comanda"].ToString(),
                         Data = dr["Data"].ToString(),
                     });
                 }

@@ -58,7 +58,6 @@ namespace Vendas.WebApp.Service
             context.Produto.Remove(obj);
             await context.SaveChangesAsync();
         }
-
         //Assincrono
         public async Task Update(Produto obj)
         {

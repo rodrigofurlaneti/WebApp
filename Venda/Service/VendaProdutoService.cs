@@ -10,9 +10,11 @@ namespace Vendas.WebApp.Service
     public class VendaProdutoService
     {
         private ApplicationDbContext context;
-        public VendaProdutoService(ApplicationDbContext _context)
+        private ProdutoContext produtocontext;
+        public VendaProdutoService(ApplicationDbContext _context, ProdutoContext _produtocontext)
         {
             context = _context;
+            produtocontext = _produtocontext;
         }
 
         //Sincrono - FindAll()
@@ -37,6 +39,9 @@ namespace Vendas.WebApp.Service
         public async Task InsertAsync(VendaProduto vendaproduto)
         {
             context.Add(vendaproduto);
+            int idProduto = vendaproduto.ProdutoId;
+            int quantProdutoPedido = vendaproduto.Quantidade;
+            produtocontext.DeleteProduto(idProduto, quantProdutoPedido);
             await context.SaveChangesAsync();
         }
 
