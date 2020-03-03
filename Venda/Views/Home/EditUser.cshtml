@@ -1,0 +1,29 @@
+﻿@model Vendas.WebApp.Models.Usuario
+
+<div id="login">
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="login-form" asp-action="FindByUser" class="form" method="post">
+                        <h3 class="text-center text-info">Autenticar</h3>
+                        <div class="form-group">
+                            <label asp-for="@Model.Nome" class="text-info">Nome:</label><br>
+                            <input asp-for="@Model.Nome" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="@Model.Senha" class="text-info">Senha:</label>
+                            <input type="password" asp-for="@Model.Senha" class="form-control form-control-sm" />
+                        </div>
+                        <div style="margin: 0px 0px 10px 0px; padding: 0px 0px 0px 0px; text-align: center;" class="alert alert-danger" role="alert">
+                            Usuário invalido!
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" class="btn btn-info btn-md" value="Entrar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

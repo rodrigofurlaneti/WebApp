@@ -14,6 +14,7 @@ namespace Vendas.WebApp.Service
         {
             context = _context;
         }
+
         //Sincrono - FindAll()
         public List<Comanda> FindAll()
         {

@@ -30,7 +30,7 @@ namespace Vendas.WebApp.Controllers
         //Create - Assincrono
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Venda venda)
+        public async Task<IActionResult> Create(Vendas.WebApp.Models.Venda venda)
         {
             venda.Data = DateTime.Now.ToString();
             await _vendaService.InsertAsync(venda);
@@ -91,7 +91,7 @@ namespace Vendas.WebApp.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Venda venda)
+        public async Task<IActionResult> Edit(int id, Vendas.WebApp.Models.Venda venda)
         {
             if (id != venda.Id)
             {

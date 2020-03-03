@@ -15,7 +15,7 @@ namespace Vendas.WebApp.Service
             context = _context;
         }
         //Sincrono - FindAll()
-        public List<Venda> FindAll()
+        public List<Vendas.WebApp.Models.Venda> FindAll()
         {
             return context.Venda.ToList();
         }
@@ -25,30 +25,30 @@ namespace Vendas.WebApp.Service
         {
             context.Dispose();
         }
-        public async Task<List<Venda>> FindAllAsync()
+        public async Task<List<Vendas.WebApp.Models.Venda>> FindAllAsync()
         {
             return await context.Venda.Include(x => x.Comanda).Include(x => x.Comanda.Cliente).ToListAsync();
         }
         //Assincrono - FindAsync()
-        public async Task<Venda> FindAsync()
+        public async Task<Vendas.WebApp.Models.Venda> FindAsync()
         {
             return await context.Venda.FirstOrDefaultAsync();
         }
         //Assincrono - InsertAsync(Venda Venda)
-        public async Task InsertAsync(Venda venda)
+        public async Task InsertAsync(Vendas.WebApp.Models.Venda venda)
         {
             context.Add(venda);
             await context.SaveChangesAsync();
         }
 
         //Sincrono - FindById(int id)
-        public Venda FindById(int id)
+        public Vendas.WebApp.Models.Venda FindById(int id)
         {
             return context.Venda.FirstOrDefault(o => o.Id == id);
         }
 
         //Assincrono
-        public async Task<Venda> FindByIdAsync(int id)
+        public async Task<Vendas.WebApp.Models.Venda> FindByIdAsync(int id)
         {
             return await context.Venda.FirstOrDefaultAsync(o => o.Id == id);
         }
@@ -62,7 +62,7 @@ namespace Vendas.WebApp.Service
         }
 
         //Assincrono
-        public async Task Update(Venda venda)
+        public async Task Update(Vendas.WebApp.Models.Venda venda)
         {
             bool hasAny = await context.Venda.AnyAsync(x => x.Id == venda.Id);
             if (!hasAny)

@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Cargo";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Cargo</h2>
 <p>
     <a asp-action="Create">Adicionar novo cargo</a>
@@ -63,8 +64,7 @@
 </div>
 <script>
     window.onload = contaLinhasTabela();
-    function myFunctionFiltroNomeCargo()
-    {
+    function myFunctionFiltroNomeCargo() {
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("myInput");
         filter = input.value.toUpperCase();

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using Vendas.WebApp.DAL;
 using Vendas.WebApp.Service;
 namespace Vendas.WebApp
@@ -16,6 +17,8 @@ namespace Vendas.WebApp
             Configuration = configuration;
         }
         public IConfiguration Configuration { get; }
+
+        [System.Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<CookiePolicyOptions>(options =>
@@ -25,8 +28,8 @@ namespace Vendas.WebApp
             });
             services.AddDbContext<ApplicationDbContext>(opitons => opitons.UseSqlServer("Server=.;Database=estoque;Trusted_Connection=True;MultipleActiveResultSets=true"));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSession();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<CargoService>();
             services.AddScoped<CategoriaService>();
             services.AddScoped<ClienteService>();
@@ -38,6 +41,9 @@ namespace Vendas.WebApp
             services.AddScoped<PedidoService>();
             services.AddScoped<PedidoContext>();
             services.AddScoped<ComandaService>();
+            services.AddScoped<ComandaProdutoService>();
+            services.AddScoped<ComandaProdutoContext>();
+            services.AddScoped<UsuarioContext>();
         }
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
@@ -52,7 +58,6 @@ namespace Vendas.WebApp
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

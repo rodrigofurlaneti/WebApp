@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Web;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using Vendas.WebApp.Controllers.Exceptions;
 using Vendas.WebApp.Models;
 using Vendas.WebApp.Models.ViewModels;
 using Vendas.WebApp.Service;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+
 namespace Vendas.WebApp.Controllers
 {
     public class ComandaController : Controller
@@ -40,7 +44,6 @@ namespace Vendas.WebApp.Controllers
             await _comandaService.InsertAsync(comanda);
             return RedirectToAction(nameof(Index));
         }
-
         //Details - Assincrono
         public async Task<IActionResult> Details(int? id)
         {
@@ -48,12 +51,12 @@ namespace Vendas.WebApp.Controllers
             {
                 return NotFound();
             }
-            var comanda = await _comandaService.FindByIdAsync(id.Value);
-            if (comanda == null)
+            var produto = await _comandaService.FindByIdAsync(id.Value);
+            if (produto == null)
             {
                 return NotFound();
             }
-            return View(comanda);
+            return View(produto);
         }
 
         //Delete - Assincrono
@@ -86,6 +89,7 @@ namespace Vendas.WebApp.Controllers
                 return NotFound();
             }
             var comanda = await _comandaService.FindByIdAsync(id.Value);
+
             if (comanda == null)
             {
                 return NotFound();

@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Pedido";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Pedido</h2>
 <table class="table" id="myTable">
     <thead>
@@ -27,23 +28,23 @@
         @foreach (var item in Model)
         {
 
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Produto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantidade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comanda)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data)
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comanda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+            </tr>
         }
     </tbody>
 </table>

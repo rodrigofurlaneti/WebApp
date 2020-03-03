@@ -5,6 +5,7 @@
         public int Id { get; set; }
         public int ClienteId { get; set; }
         public string Data { get; set; }
+        public int Status { get; set; }
         public Cliente Cliente { get; set; }
     }
 }

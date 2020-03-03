@@ -2,8 +2,9 @@
 @{
     ViewData["Title"] = "Venda produto";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Venda produto</h2>
- <form class="form-inline">
+<form class="form-inline">
     <div class="form-group mb-2">
         <label for="input>NomeDaVenda" class="sr-only">Nome da Venda</label>
         <input type="text" class="form-control form-control-sm" id="myInput" onkeyup="myFunctionFiltroNomeVenda()" placeholder="Nome da Venda">
@@ -39,29 +40,29 @@
         @foreach (var item in Model)
         {
 
-        <tr onclick="Detalhar(@item.Id)">
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VendaId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Produto.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantidade)
-            </td>
-            <td>
-                <a asp-action="Details" class="btn btn-sm btn-warning" asp-route-id="@item.Id">Detalhar</a>
-            </td>
-            <td>
-                <a asp-action="Edit" class="btn btn-sm btn-info" asp-route-id="@item.Id">Editar</a>
-            </td>
-            <td>
-                <a asp-action="Delete" class="btn btn-sm btn-danger" asp-route-id="@item.Id">Apagar</a>
-            </td>
-        </tr>
+            <tr onclick="Detalhar(@item.Id)">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VendaId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produto.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantidade)
+                </td>
+                <td>
+                    <a asp-action="Details" class="btn btn-sm btn-warning" asp-route-id="@item.Id">Detalhar</a>
+                </td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-sm btn-info" asp-route-id="@item.Id">Editar</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" class="btn btn-sm btn-danger" asp-route-id="@item.Id">Apagar</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

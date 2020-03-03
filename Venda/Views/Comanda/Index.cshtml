@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Comanda";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Comanda</h2>
 <p>
     <a asp-action="Create">Adicionar nova comanda</a>
@@ -40,26 +41,26 @@
         @foreach (var item in Model)
         {
 
-        <tr onclick="Detalhar(@item.Id)">
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cliente.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data)
-            </td>
-            <td>
-                <a asp-action="Details" class="btn btn-sm btn-warning" asp-route-id="@item.Id">Detalhar</a>
-            </td>
-            <td>
-                <a asp-action="Edit" class="btn btn-sm btn-info" asp-route-id="@item.Id">Editar</a>
-            </td>
-            <td>
-                <a asp-action="Delete" class="btn btn-sm btn-danger" asp-route-id="@item.Id">Apagar</a>
-            </td>
-        </tr>
+            <tr onclick="Detalhar(@item.Id)">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+                <td>
+                    <a asp-action="Details" class="btn btn-sm btn-warning" asp-route-id="@item.Id">Detalhar</a>
+                </td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-sm btn-info" asp-route-id="@item.Id">Editar</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" class="btn btn-sm btn-danger" asp-route-id="@item.Id">Apagar</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
@@ -69,8 +70,7 @@
 </div>
 <script>
     window.onload = contaLinhasTabela();
-    function myFunctionFiltroNomeCargo()
-    {
+    function myFunctionFiltroNomeCargo() {
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("myInput");
         filter = input.value.toUpperCase();

@@ -10,9 +10,11 @@ namespace Vendas.WebApp.Service
     public class UsuarioService
     {
         private ApplicationDbContext context;
-        public UsuarioService(ApplicationDbContext _context)
+        private UsuarioContext usuariocontext;
+        public UsuarioService(ApplicationDbContext _context, UsuarioContext _usuarioContext)
         {
             context = _context;
+            usuariocontext = _usuarioContext;
         }
         //Sincrono - FindAll()
         public List<Usuario> FindAll()
@@ -76,6 +78,11 @@ namespace Vendas.WebApp.Service
             {
                 throw new DbConcurrencyException(e.Message);
             }
+        }
+
+        public List<Usuario> FindByUser(string user)
+        {
+            return usuariocontext.FindByUser(user);
         }
     }
 }

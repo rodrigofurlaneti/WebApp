@@ -1,68 +1,26 @@
-﻿<div class="row" style="text-align:center;">
-    <div class="col-md-4">
-        <div>
-            <a href="../Cargo/Index">
-                <img src="~/images/vendedores.png" width="100" height="100" />
-            </a>
-        </div>
-        <span>Cargo</span>
-    </div>
-    <div class="col-md-4">
-        <div>
-            <a href="../Categoria/Index">
-                <img src="~/images/categorias.png" width="100" height="100" />
-            </a>
-        </div>
-        <span>Categoria</span>
-    </div>
-    <div class="col-md-4">
-        <div>
-            <a href="../Cliente/Index">
-                <img src="~/images/clientes.png" width="100" height="100" />
-            </a>
-        </div>
-        <span>Clientes</span>
-    </div>
-    <div class="col-md-4">
-        <div>
-            <a href="../Comanda/Index">
-                <img src="~/images/comandas.png" width="100" height="100" />
-            </a>
-        </div>
-        <span>Comandas</span>
-    </div>
-    <div class="col-md-4">
-        <div>
-            <a href="../Produto/Index">
-                <img src="~/images/produtos.png" width="100" height="100" />
-            </a>
-        </div>
-        <span>Produto</span>
-    </div>
-    <div class="col-md-4">
-        <div>
-            <a href="../Usuario/Index">
-                <img src="~/images/usuarios.png" width="100" height="100" />
-            </a>
-        </div>
-        <span>Usuario</span>
-    </div>
-    <div class="col-md-4">
-        <div>
-            <a href="../Venda/Index">
-                <img src="~/images/vendas.png" width="100" height="100" />
-            </a>
-        </div>
-        <span>Vendas</span>
-    </div>
-    <div class="col-md-4">
-        <div>
-            <a href="../Pedido/Index">
-                <img src="~/images/pedidos.png" width="100" height="100" />
-            </a>
-        </div>
-        <span>Pedidos</span>
-    </div>
+﻿@model Vendas.WebApp.Models.Usuario
 
-
-</div>
+    <div id="login">
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" asp-action="FindByUser" class="form" method="post">
+                            <h3 class="text-center text-info">Autenticar</h3>
+                            <div class="form-group">
+                                <label asp-for="@Model.Nome" class="text-info">Nome:</label><br>
+                                <input asp-for="@Model.Nome" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@Model.Senha" class="text-info">Senha:</label>
+                                <input type="password" asp-for="@Model.Senha" class="form-control form-control-sm" />
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Entrar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
