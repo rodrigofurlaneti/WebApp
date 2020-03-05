@@ -1,14 +1,10 @@
-﻿using System.Web;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using Vendas.WebApp.Controllers.Exceptions;
 using Vendas.WebApp.Models;
 using Vendas.WebApp.Models.ViewModels;
 using Vendas.WebApp.Service;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
-
 namespace Vendas.WebApp.Controllers
 {
     public class ComandaController : Controller
@@ -20,13 +16,11 @@ namespace Vendas.WebApp.Controllers
             _comandaService = comandaService;
             _clienteService = clienteService;
         }
-
         //Index - Assincrono
         public async Task<IActionResult> Index()
         {
             return View(await _comandaService.FindAllAsync());
         }
-
         //Create - Sincrono
         public async Task<IActionResult> Create()
         {

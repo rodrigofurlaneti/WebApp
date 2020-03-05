@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Vendas.WebApp.Models.ComandaProduto>;
+@{
+    ViewData["Title"] = "Detalhar pagamento";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<h2 class="display-4">Detalhar comanda produto</h2>
+<table class="table" id="myTable">
+    <thead>
+        <tr class="col-12">
+            <th>
+                Data
+            </th>
+            <th>
+                Produto
+            </th>
+            <th>
+                Quantidade
+            </th>
+            <th>
+                Valor
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr onclick="Detalhar(@item.Id)">
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataHora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantidade)
+                </td>
+                <td>
+                    <span>@Html.DisplayFor(modelItem => item.Valor)</span>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+                <label id="ValorTotal" name="ValorTotal" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index" class="btn btn-sm btn-secondary">Voltar</a>
+</div>
+<script>
+    window.onload = contar();
+    function contar() {
+        var valores = document.querySelectorAll("span");
+        let val = [];
+        for (i = 0; i < valores.length; i++) {
+            val.push(parseFloat(valores[i].innerHTML.replace(',', '.')))
+        }
+        console.log(val);
+        var total = val.reduce((acumulador, numero) => {
+        return acumulador += numero;
+        }, 0)
+        console.log(total)
+    }
+</script>

@@ -3,12 +3,12 @@
     ViewData["Title"] = "Comanda produtos";
 }
 @await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
-<h2 class="display-4">Adicionar comanda</h2>
+<h2 class="display-4">Comanda</h2>
 <form asp-action="Details">
     <div class="form-row">
         <div class="form-group-sm col-md-12">
             <div class="form-group">
-                <label asp-for="@Model.Id" class="control-label">Nome:</label>
+                <label asp-for="@Model.Id" class="control-label">Número:</label>
                 <input asp-for="@Model.Id" class="form-control form-control-sm" />
                 <span asp-validation-for="@Model.Id" class="text-danger"></span>
             </div>

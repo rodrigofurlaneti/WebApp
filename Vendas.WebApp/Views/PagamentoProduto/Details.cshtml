@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Vendas.WebApp.Models.ComandaProduto>;
+@{
+    ViewData["Title"] = "Detalhar comanda produto";
+}
+<h2 class="display-4">Detalhar comanda produto</h2>
+<table class="table" id="myTable">
+    <thead>
+        <tr class="col-12">
+            <th>
+                Data
+            </th>
+            <th>
+                Produto
+            </th>
+            <th>
+                Quantidade
+            </th>
+            <th>
+                Valor
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr onclick="Detalhar(@item.Id)">
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataHora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index" class="btn btn-sm btn-secondary">Voltar</a>
+</div>
