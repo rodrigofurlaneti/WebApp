@@ -10,9 +10,11 @@ namespace Vendas.WebApp.Service
     public class PagamentoService
     {
         private ApplicationDbContext context;
-        public PagamentoService(ApplicationDbContext _context)
+        private PagamentoContext pagamentocontext;
+        public PagamentoService(ApplicationDbContext _context, PagamentoContext _pagamentocontext)
         {
             context = _context;
+            pagamentocontext = _pagamentocontext;
         }
 
         //Sincrono - FindAll()
@@ -77,6 +79,14 @@ namespace Vendas.WebApp.Service
             {
                 throw new DbConcurrencyException(e.Message);
             }
+        }
+        public List<Pagamento> ToListProdutosComanda(int id)
+        {
+            return pagamentocontext.ToListProdutosComanda(id);
+        }
+        public List<Pagamento> ToListProdutos()
+        {
+            return context.Pagamento.ToList();
         }
     }
 }

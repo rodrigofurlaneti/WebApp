@@ -1,4 +1,4 @@
-﻿@model Vendas.WebApp.Models.ComandaProduto
+﻿@model Vendas.WebApp.Models.ViewModels.PagamentoFormViewModels;
 @{
     ViewData["Title"] = "Pagamento";
 }
@@ -8,9 +8,9 @@
     <div class="form-row">
         <div class="form-group-sm col-md-12">
             <div class="form-group">
-                <label asp-for="@Model.Id" class="control-label">Número da comanda:</label>
-                <input asp-for="@Model.Id" class="form-control form-control-sm" />
-                <span asp-validation-for="@Model.Id" class="text-danger"></span>
+                <label asp-for="@Model.Pagamento.ComandaId" class="control-label">Número da comanda:</label>
+                <select asp-for="@Model.Pagamento.ComandaId" asp-items="@(new SelectList(Model.Comanda,"Id","Id"))" class="form-control form-control-sm"></select>
+                <span asp-validation-for="@Model.Pagamento.ComandaId" class="text-danger"></span>
             </div>
         </div>
     </div>

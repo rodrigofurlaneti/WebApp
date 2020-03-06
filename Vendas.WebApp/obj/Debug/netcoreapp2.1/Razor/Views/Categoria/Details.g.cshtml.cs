@@ -71,7 +71,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(350, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1178e0c46bb64a26a24221e964de4013", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "77caf9e0b58a47318bbc1aa880c7700f", async() => {
                 BeginContext(405, 6, true);
                 WriteLiteral("Voltar");
                 EndContext();

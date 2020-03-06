@@ -11,29 +11,33 @@ namespace Vendas.WebApp.Controllers
     {
         private readonly PagamentoService _PagamentoService;
         private readonly ComandaService _ComandaService;
-        private readonly ComandaProdutoService _ComandaProdutoService;
-        public PagamentoController(PagamentoService PagamentoService, ComandaService ComandaService, ComandaProdutoService ComandaProdutoService)
+        public PagamentoController(PagamentoService PagamentoService, ComandaService ComandaService)
         {
             _PagamentoService = PagamentoService;
             _ComandaService = ComandaService;
-            _ComandaProdutoService = ComandaProdutoService;
         }
-        public ActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var comanda = await _ComandaService.FindAllAsync();
+            var viewModel = new PagamentoFormViewModels { Comanda = comanda };
+            return View(viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Details(ComandaProduto p)
+        public IActionResult Details(Pagamento pagamento)
         {
-            int id = p.Id;
-            var comandaproduto = _ComandaProdutoService.ToListProdutos(id);
-            if (comandaproduto == null)
+            int comandaid = pagamento.ComandaId;
+            var pagamentoservice = _PagamentoService.ToListProdutosComanda(comandaid);
+            if (pagamentoservice == null)
             {
                 return NotFound();
             }
-            return View(comandaproduto);
+            return View(pagamentoservice);
+        }
+        public IActionResult Edit(Pagamento pagamento)
+        {
+            return View();
         }
     }
 }

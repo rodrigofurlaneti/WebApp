@@ -78,7 +78,7 @@ using Vendas.WebApp.Models;
                 <li>");
             EndContext();
             BeginContext(537, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b50be46ecd64b2eaa848ce6a15d839c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37d541e966354bfeaa010ab7f3e24ed4", async() => {
                 BeginContext(595, 4, true);
                 WriteLiteral("Home");
                 EndContext();
@@ -104,7 +104,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("</li>\r\n                <li>");
             EndContext();
             BeginContext(630, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f40873e1a73e4205b911ef0f73b7d248", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e761b0aee5114832a12416924b180409", async() => {
                 BeginContext(687, 5, true);
                 WriteLiteral("Cargo");
                 EndContext();
@@ -130,7 +130,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("</li>\r\n                <li>");
             EndContext();
             BeginContext(723, 74, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc989ca7cb954cdfb79939a7cc8e8497", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b54c7bbd85254db1a6e47351cb5dc77f", async() => {
                 BeginContext(784, 9, true);
                 WriteLiteral("Categoria");
                 EndContext();
@@ -156,7 +156,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("</li>\r\n                <li>");
             EndContext();
             BeginContext(824, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5487bd814d241b99432457c4e0f589b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d83ab276884d4f2aa5009c09ecc15f78", async() => {
                 BeginContext(883, 7, true);
                 WriteLiteral("Cliente");
                 EndContext();
@@ -182,7 +182,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("</li>\r\n                <li>");
             EndContext();
             BeginContext(921, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad3c5af3523b4c6fad378e484254e557", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ffc1cec6f95342f2a901b993f9c0a50a", async() => {
                 BeginContext(980, 7, true);
                 WriteLiteral("Comanda");
                 EndContext();
@@ -208,7 +208,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("</li>\r\n                <li>");
             EndContext();
             BeginContext(1018, 85, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "781399dd78694f4e9485a2bd6cb2126a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "034657d8b1c444f7b6fca960cc636e64", async() => {
                 BeginContext(1084, 15, true);
                 WriteLiteral("Comanda Produto");
                 EndContext();
@@ -234,7 +234,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("</li>\r\n                <li>");
             EndContext();
             BeginContext(1130, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3dd4fad066044ef181c818c139da9f5f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "437e98a7962243bb8616a7b6dcc92afb", async() => {
                 BeginContext(1189, 7, true);
                 WriteLiteral("Produto");
                 EndContext();
@@ -260,7 +260,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("</li>\r\n                <li>");
             EndContext();
             BeginContext(1227, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "407f768f623d4fec83f02ca4ffd37573", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e578bbf8e014a10ba4ccf5298867a64", async() => {
                 BeginContext(1286, 7, true);
                 WriteLiteral("Usuario");
                 EndContext();
@@ -286,7 +286,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("</li>\r\n                <li>");
             EndContext();
             BeginContext(1324, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "52a598b6ca944371ac631769bf9ecf93", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d5f4c19b4ad5416e8bcbd59f13675088", async() => {
                 BeginContext(1381, 5, true);
                 WriteLiteral("Venda");
                 EndContext();
@@ -312,7 +312,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("</li>\r\n                <li>");
             EndContext();
             BeginContext(1417, 74, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e180fa1afab94f20ab4805b99315038f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40c23f51fcc545e8ae1c4e8782f9c706", async() => {
                 BeginContext(1478, 9, true);
                 WriteLiteral("Pagamento");
                 EndContext();
@@ -338,7 +338,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("</li>\r\n                <li>");
             EndContext();
             BeginContext(1518, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "553f2af7bce1478c8a863ba63b12b666", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "81eccf6f8f504496bbfe37c6ce8467e4", async() => {
                 BeginContext(1576, 6, true);
                 WriteLiteral("Pedido");
                 EndContext();
@@ -364,7 +364,7 @@ using Vendas.WebApp.Models;
             WriteLiteral("</li>\r\n                <li>");
             EndContext();
             BeginContext(1613, 113, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd71c5a3244bc997deed3048b21e3a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "08ad62665e714014a6fe50b88aa7df71", async() => {
                 BeginContext(1669, 53, true);
                 WriteLiteral("<span class=\"glyphicon glyphicon-log-out\"></span>Sair");
                 EndContext();

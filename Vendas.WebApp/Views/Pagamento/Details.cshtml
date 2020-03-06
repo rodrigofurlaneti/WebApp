@@ -1,9 +1,7 @@
-﻿@model IEnumerable<Vendas.WebApp.Models.ComandaProduto>;
+﻿@model IEnumerable<Vendas.WebApp.Models.Pagamento>;
 @{
     ViewData["Title"] = "Detalhar pagamento";
 }
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
 <h2 class="display-4">Detalhar comanda produto</h2>
 <table class="table" id="myTable">
     <thead>
@@ -11,13 +9,13 @@
             <th>
                 Data
             </th>
-            <th>
+            <th style="text-align: center" ;>
                 Produto
             </th>
-            <th>
+            <th style="text-align: center" ;>
                 Quantidade
             </th>
-            <th>
+            <th style="text-align: center" ;>
                 Valor
             </th>
         </tr>
@@ -25,17 +23,17 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr onclick="Detalhar(@item.Id)">
+            <tr onclick="Detalhar(@item.ComandaId)">
                 <td>
-                    @Html.DisplayFor(modelItem => item.DataHora)
+                    @Html.DisplayFor(modelItem => item.Data)
                 </td>
-                <td>
+                <td style="text-align: center" ;>
                     @Html.DisplayFor(modelItem => item.Produto)
                 </td>
-                <td>
+                <td style="text-align: center;">
                     @Html.DisplayFor(modelItem => item.Quantidade)
                 </td>
-                <td>
+                <td style="text-align: center">
                     <span>@Html.DisplayFor(modelItem => item.Valor)</span>
                 </td>
             </tr>
@@ -47,14 +45,17 @@
             </td>
             <td>
             </td>
-            <td>
-                <label id="ValorTotal" name="ValorTotal" />
+            <td style="text-align: center" ;>
+                <div id="ValorTotal" class="ValorTotal"></div>
             </td>
         </tr>
     </tbody>
 </table>
 <div>
     <a asp-action="Index" class="btn btn-sm btn-secondary">Voltar</a>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-sm btn-secondary">Pagar</a>
 </div>
 <script>
     window.onload = contar();
@@ -66,8 +67,12 @@
         }
         console.log(val);
         var total = val.reduce((acumulador, numero) => {
-        return acumulador += numero;
+            return acumulador += numero;
         }, 0)
-        console.log(total)
+        var arr = total.toFixed(2);
+        console.log(arr);
+        var $wrapper = document.querySelector('.ValorTotal'),
+            HTMLNovo = '<label class="control-label">' + arr + '</label>';
+        $wrapper.innerHTML = HTMLNovo;
     }
 </script>

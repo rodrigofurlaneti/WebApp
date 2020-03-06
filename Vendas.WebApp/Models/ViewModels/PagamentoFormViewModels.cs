@@ -5,6 +5,5 @@ namespace Vendas.WebApp.Models.ViewModels
     {
         public Pagamento Pagamento { get; set; }
         public List<Comanda> Comanda { get; set; }
-        public List<ComandaProduto> ComandaProduto { get; set; }
     }
 }

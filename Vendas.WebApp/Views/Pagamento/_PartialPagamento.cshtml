@@ -1,1 +1,14 @@
-﻿
+﻿@model Vendas.WebApp.Models.Pagamento
+<form asp-action="Create">
+    <input asp-for="@Model.ComandaId" type="hidden" class="form-control form-control-sm" />
+    <div class="form-row botao">
+        <div class="col-md-11">
+            <a asp-action="Index">
+                <input type="button" value="Voltar" class="btn btn-sm btn-secondary" />
+            </a>
+        </div>
+        <div class="col-md-1">
+            <input type="submit" value="Salvar" class="btn btn-sm btn-success" />
+        </div>
+    </div>
+</form>
