@@ -2,6 +2,10 @@
 
 [![N|Solid](https://raw.githubusercontent.com/diegoeis/tableless-static-images/master/2015/02/laravel-introducao.jpg)](https://nodesource.com/products/nsolid)
 
+[![N|Solid](https://lh3.googleusercontent.com/proxy/41cPeVGm4w18PngNYY8HOfljvgbeqtQX8w_t-5OoBcmKLvWhZcdvbce7w_ALy_W-iGXwwQ51N2fLHiBG2LLyFzmVkwW4qewjguu7)](https://nodesource.com/products/nsolid)
+
+
+
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 
