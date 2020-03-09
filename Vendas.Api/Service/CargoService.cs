@@ -1,7 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Vendas.Api.DAL;
 using Vendas.Api.Models;
 namespace Vendas.Api.Service
@@ -30,33 +28,23 @@ namespace Vendas.Api.Service
             context.SaveChangesAsync();
         }
 
-        ////Sincrono - Dispose()
-        //public void Dispose()
-        //{
-        //    context.Dispose();
-        //}
-
+        //Assincrono
+        public void Remove(int id)
+        {
+            var obj = context.Cargo.Find(id);
+            context.Cargo.Remove(obj);
+            context.SaveChangesAsync();
+        }
         ////Assincrono - FindAllAsync()
         //public async Task<List<Cargo>> FindAllAsync()
         //{
         //    return await context.Cargo.OrderBy(x => x.Nome).ToListAsync();
         //}
 
-
-
-
         ////Assincrono
         //public async Task<Cargo> FindByIdAsync(int id)
         //{
         //    return await context.Cargo.FirstOrDefaultAsync(o => o.Id == id);
-        //}
-
-        ////Assincrono
-        //public async Task RemoveAsync(int id)
-        //{
-        //    var obj = await context.Cargo.FindAsync(id);
-        //    context.Cargo.Remove(obj);
-        //    await context.SaveChangesAsync();
         //}
 
         ////Assincrono

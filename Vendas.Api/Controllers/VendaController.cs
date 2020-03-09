@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Vendas.Api.Models;
 using Vendas.Api.Service;
 namespace Vendas.Api.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     [Produces("application/json")]
     public class VendaController : Controller
     {
@@ -31,15 +30,44 @@ namespace Vendas.Api.Controllers
             string json = JsonConvert.SerializeObject(Venda);
             return Json(json);
         }
-
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult Create(Venda Venda)
+        public ActionResult<Venda> Post(Venda Venda)
         {
             _VendaService.InsertAsync(Venda);
-            return RedirectToAction("Venda", "Get");
+            return CreatedAtAction(nameof(Get), new { id = Venda.Id }, Venda);
         }
+        [HttpDelete("{id}")]
+        public ActionResult<Venda> Delete(int id)
+        {
+            _VendaService.Remove(id);
+            return CreatedAtAction(nameof(Get), new { id = id });
+
+        }
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> Put(int id, Venda Venda)
+        //{
+        //    if (id != Venda.Id)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    try
+        //    {
+        //        await _VendaService.Update(Venda);
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        var cs = _VendaService.FindById(id);
+        //        if (cs.Id == null)
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+        //    return CreatedAtAction(nameof(Get), new { id = id });
+        //}
 
     }
 }

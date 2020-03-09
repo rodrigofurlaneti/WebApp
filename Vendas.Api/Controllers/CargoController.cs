@@ -1,14 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using Vendas.Api.Models;
 using Vendas.Api.Service;
 namespace Vendas.Api.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     [Produces("application/json")]
     public class CargoController : Controller
     {
@@ -33,15 +30,44 @@ namespace Vendas.Api.Controllers
             string json = JsonConvert.SerializeObject(cargo);
             return Json(json);
         }
-
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult Create(Cargo cargo)
+        public ActionResult<Cargo> Post(Cargo cargo)
         {
             _cargoService.InsertAsync(cargo);
-            return RedirectToAction("Cargo", "Get");
+            return CreatedAtAction(nameof(Get), new { id = cargo.Id }, cargo);
         }
+        [HttpDelete("{id}")]
+        public ActionResult<Cargo> Delete(int id)
+        {
+             _cargoService.Remove(id);
+            return CreatedAtAction(nameof(Get), new { id = id });
+
+        }
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> Put(int id, Cargo cargo)
+        //{
+        //    if (id != cargo.Id)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    try
+        //    {
+        //        await _cargoService.Update(cargo);
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        var cs = _cargoService.FindById(id);
+        //        if (cs.Id == null)
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+        //    return CreatedAtAction(nameof(Get), new { id = id });
+        //}
 
     }
 }

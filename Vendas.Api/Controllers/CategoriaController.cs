@@ -1,14 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using Vendas.Api.Models;
 using Vendas.Api.Service;
 namespace Vendas.Api.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     [Produces("application/json")]
     public class CategoriaController : Controller
     {
@@ -33,15 +30,44 @@ namespace Vendas.Api.Controllers
             string json = JsonConvert.SerializeObject(Categoria);
             return Json(json);
         }
-
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult Create(Categoria Categoria)
+        public ActionResult<Categoria> Post(Categoria Categoria)
         {
             _CategoriaService.InsertAsync(Categoria);
-            return RedirectToAction("Categoria", "Get");
+            return CreatedAtAction(nameof(Get), new { id = Categoria.Id }, Categoria);
         }
+        [HttpDelete("{id}")]
+        public ActionResult<Categoria> Delete(int id)
+        {
+            _CategoriaService.Remove(id);
+            return CreatedAtAction(nameof(Get), new { id = id });
+
+        }
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> Put(int id, Categoria Categoria)
+        //{
+        //    if (id != Categoria.Id)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    try
+        //    {
+        //        await _CategoriaService.Update(Categoria);
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        var cs = _CategoriaService.FindById(id);
+        //        if (cs.Id == null)
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+        //    return CreatedAtAction(nameof(Get), new { id = id });
+        //}
 
     }
 }

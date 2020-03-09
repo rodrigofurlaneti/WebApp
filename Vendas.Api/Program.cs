@@ -22,3 +22,4 @@ namespace Vendas.Api
                 .UseStartup<Startup>();
     }
 }
+

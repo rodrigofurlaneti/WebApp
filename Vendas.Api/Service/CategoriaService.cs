@@ -1,7 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Vendas.Api.DAL;
 using Vendas.Api.Models;
 namespace Vendas.Api.Service
@@ -29,5 +27,43 @@ namespace Vendas.Api.Service
             context.Add(obj);
             context.SaveChangesAsync();
         }
+
+        //Assincrono
+        public void Remove(int id)
+        {
+            var obj = context.Categoria.Find(id);
+            context.Categoria.Remove(obj);
+            context.SaveChangesAsync();
+        }
+        ////Assincrono - FindAllAsync()
+        //public async Task<List<Categoria>> FindAllAsync()
+        //{
+        //    return await context.Categoria.OrderBy(x => x.Nome).ToListAsync();
+        //}
+
+        ////Assincrono
+        //public async Task<Categoria> FindByIdAsync(int id)
+        //{
+        //    return await context.Categoria.FirstOrDefaultAsync(o => o.Id == id);
+        //}
+
+        ////Assincrono
+        //public async Task Update(Categoria obj)
+        //{
+        //    bool hasAny = await context.Categoria.AnyAsync(x => x.Id == obj.Id);
+        //    if (!hasAny)
+        //    {
+        //        throw new NotFoundException("Id not found");
+        //    }
+        //    try
+        //    {
+        //        context.Update(obj);
+        //        await context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException e)
+        //    {
+        //        throw new DbConcurrencyException(e.Message);
+        //    }
+        //}
     }
 }

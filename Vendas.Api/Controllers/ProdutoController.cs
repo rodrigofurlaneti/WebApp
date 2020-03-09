@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Vendas.Api.Models;
 using Vendas.Api.Service;
 namespace Vendas.Api.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     [Produces("application/json")]
     public class ProdutoController : Controller
     {
@@ -31,15 +30,44 @@ namespace Vendas.Api.Controllers
             string json = JsonConvert.SerializeObject(Produto);
             return Json(json);
         }
-
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult Create(Produto Produto)
+        public ActionResult<Produto> Post(Produto Produto)
         {
             _ProdutoService.InsertAsync(Produto);
-            return RedirectToAction("Produto", "Get");
+            return CreatedAtAction(nameof(Get), new { id = Produto.Id }, Produto);
         }
+        [HttpDelete("{id}")]
+        public ActionResult<Produto> Delete(int id)
+        {
+            _ProdutoService.Remove(id);
+            return CreatedAtAction(nameof(Get), new { id = id });
+
+        }
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> Put(int id, Produto Produto)
+        //{
+        //    if (id != Produto.Id)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    try
+        //    {
+        //        await _ProdutoService.Update(Produto);
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        var cs = _ProdutoService.FindById(id);
+        //        if (cs.Id == null)
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+        //    return CreatedAtAction(nameof(Get), new { id = id });
+        //}
 
     }
 }
