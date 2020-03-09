@@ -2,12 +2,13 @@
 using Newtonsoft.Json;
 using Vendas.Api.Models;
 using Vendas.Api.Service;
+using System;
 namespace Vendas.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
     [Produces("application/json")]
-    public class ProdutoController : Controller
+    public class ProdutoController
     {
         private readonly ProdutoService _ProdutoService;
         public ProdutoController(ProdutoService ProdutoService)
@@ -16,32 +17,29 @@ namespace Vendas.Api.Controllers
         }
 
         [HttpGet]
-        public JsonResult Get()
+        public string Get()
         {
             var Produto = _ProdutoService.FindAll();
             string json = JsonConvert.SerializeObject(Produto);
-            return Json(json);
+            return (json);
         }
 
         [HttpGet("{id}")]
-        public JsonResult Get(int id)
+        public string Get(int id)
         {
             var Produto = _ProdutoService.FindById(id);
             string json = JsonConvert.SerializeObject(Produto);
-            return Json(json);
+            return (json);
         }
         [HttpPost]
-        public ActionResult<Produto> Post(Produto Produto)
+        public void Post(Produto produto)
         {
-            _ProdutoService.InsertAsync(Produto);
-            return CreatedAtAction(nameof(Get), new { id = Produto.Id }, Produto);
+            _ProdutoService.InsertAsync(produto);
         }
         [HttpDelete("{id}")]
-        public ActionResult<Produto> Delete(int id)
+        public void Delete(int id)
         {
             _ProdutoService.Remove(id);
-            return CreatedAtAction(nameof(Get), new { id = id });
-
         }
         //[HttpPut("{id}")]
         //public async Task<IActionResult> Put(int id, Produto Produto)

@@ -12,7 +12,7 @@ namespace Vendas.WebApp.Service
         }
         public List<Pedido> FindAll()
         {
-            return pedidocontext.ToList();
+            return pedidocontext.FindAll();
         }
     }
 }
