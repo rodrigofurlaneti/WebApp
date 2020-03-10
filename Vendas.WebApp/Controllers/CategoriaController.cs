@@ -89,7 +89,7 @@ namespace Vendas.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Categoria categoria)
         {
-            if (id != categoria.Codigo)
+            if (id != categoria.Id)
             {
                 return BadRequest();
             }

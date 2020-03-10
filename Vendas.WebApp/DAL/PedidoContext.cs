@@ -8,7 +8,7 @@ namespace Vendas.WebApp.DAL
     public class PedidoContext
     {
         string _ConnectionString = "Server=.;Database=estoque;Trusted_Connection=True;MultipleActiveResultSets=true";
-        public List<Pedido> ToList()
+        public List<Pedido> FindAll()
         {
             List<Pedido> pedido = new List<Pedido>();
             SqlConnection sqlConnection = new SqlConnection(_ConnectionString);

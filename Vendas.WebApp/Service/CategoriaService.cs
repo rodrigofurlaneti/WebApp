@@ -29,7 +29,7 @@ namespace Vendas.WebApp.Service
         //Assincrono - FindAllAsync()
         public async Task<List<Categoria>> FindAllAsync()
         {
-            return await context.Categoria.OrderBy(x => x.Nome).ToListAsync();
+            return await context.Categoria.ToListAsync();
         }
 
         //Assincrono - InsertAsync(Categoria obj)
@@ -42,13 +42,13 @@ namespace Vendas.WebApp.Service
         //Sincrono - FindById(int id)
         public Categoria FindById(int id)
         {
-            return context.Categoria.FirstOrDefault(o => o.Codigo == id);
+            return context.Categoria.FirstOrDefault(o => o.Id == id);
         }
 
         //Assincrono
         public async Task<Categoria> FindByIdAsync(int id)
         {
-            return await context.Categoria.FirstOrDefaultAsync(o => o.Codigo == id);
+            return await context.Categoria.FirstOrDefaultAsync(o => o.Id == id);
         }
 
         //Assincrono
@@ -62,7 +62,7 @@ namespace Vendas.WebApp.Service
         //Assincrono
         public async Task Update(Categoria obj)
         {
-            bool hasAny = await context.Categoria.AnyAsync(x => x.Codigo == obj.Codigo);
+            bool hasAny = await context.Categoria.AnyAsync(x => x.Id == obj.Id);
             if (!hasAny)
             {
                 throw new NotFoundException("Id not found");
