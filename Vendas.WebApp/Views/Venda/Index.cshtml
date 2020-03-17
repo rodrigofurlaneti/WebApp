@@ -28,7 +28,7 @@
                 Data / Hora
             </th>
             <th>
-                UserId
+                Usuário
             </th>
             <th>
                 Detalhar
@@ -56,7 +56,7 @@
                 @Html.DisplayFor(modelItem => item.Data)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserId)
+                @Html.DisplayFor(modelItem => item.UserNome)
             </td>
             <td>
                 <a asp-action="Details" class="btn btn-sm btn-warning" asp-route-id="@item.Id">Detalhar</a>

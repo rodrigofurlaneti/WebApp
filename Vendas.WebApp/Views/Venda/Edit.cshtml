@@ -4,7 +4,8 @@
 }
 <h2 class="display-4">Editar venda</h2>
 <form asp-action="Edit">
-    <input asp-for="@Model.Venda.Id" type="hidden" class="form-control form-control-sm" />
+    <input asp-for="@Model.Venda.Id" type="hidden"/>
+    <input asp-for="@Model.Venda.UserNome" type="hidden" value="@ViewBag.Message"/>
     <div class="form-row">
         <div class="form-group-sm col-md-12">
             <div class="form-group">

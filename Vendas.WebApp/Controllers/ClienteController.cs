@@ -17,12 +17,10 @@ namespace Vendas.WebApp.Controllers
         //Index - Assincrono
         public async Task<IActionResult> Index()
         {
-            ViewBag.MessageId = HttpContext.Session.GetString("UserId");
             ViewBag.Message = HttpContext.Session.GetString("UserName");
             ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
             return View(await _ClienteService.FindAllAsync());
         }
-
         //Create - Sincrono
         public IActionResult Create()
         {

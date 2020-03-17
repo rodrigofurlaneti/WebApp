@@ -27,7 +27,8 @@ namespace Vendas.WebApp.Service
         }
         public async Task<List<Vendas.WebApp.Models.Venda>> FindAllAsync()
         {
-            return await context.Venda.Include(x => x.Comanda).Include(x => x.Comanda.Cliente).ToListAsync();
+            return await context.Venda  .Include(x => x.Comanda)
+                                        .Include(x => x.Comanda.Cliente).ToListAsync();
         }
         //Assincrono - FindAsync()
         public async Task<Vendas.WebApp.Models.Venda> FindAsync()

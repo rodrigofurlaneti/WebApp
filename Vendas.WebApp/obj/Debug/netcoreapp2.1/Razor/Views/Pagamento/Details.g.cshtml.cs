@@ -164,7 +164,7 @@ WriteAttributeValue("", 696, item.ComandaId, 696, 15, false);
     ");
             EndContext();
             BeginContext(1586, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "96b39b3618944ce1be6bb5723c437846", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a18502ff99954d5aaec50b645fb1abf9", async() => {
                 BeginContext(1641, 6, true);
                 WriteLiteral("Voltar");
                 EndContext();
@@ -187,7 +187,7 @@ WriteAttributeValue("", 696, item.ComandaId, 696, 15, false);
             WriteLiteral("\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(1672, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b77b23ce6d0c4b10a5401c80c729562e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "efba3eef452d410faaa946f98e6fd4c8", async() => {
                 BeginContext(1726, 5, true);
                 WriteLiteral("Pagar");
                 EndContext();

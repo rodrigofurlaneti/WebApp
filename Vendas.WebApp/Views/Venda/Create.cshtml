@@ -5,7 +5,7 @@
 @await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Adicionar venda</h2>
 <form asp-action="Create">
-    <input asp-for="@Model.Venda.UserId" type="hidden" value="@ViewBag.MessageId" />
+    <input asp-for="@Model.Venda.UserNome" type="hidden" value="@ViewBag.Message" />
     <div class="form-row">
         <div class="form-group-sm col-md-12">
             <div class="form-group">

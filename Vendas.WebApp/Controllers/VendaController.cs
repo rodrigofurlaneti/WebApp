@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using Vendas.WebApp.Controllers.Exceptions;
-using Vendas.WebApp.Models;
 using Vendas.WebApp.Models.ViewModels;
 using Vendas.WebApp.Service;
 namespace Vendas.WebApp.Controllers
@@ -19,7 +18,6 @@ namespace Vendas.WebApp.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            ViewBag.MessageId = HttpContext.Session.GetString("UserId");
             ViewBag.Message = HttpContext.Session.GetString("UserName");
             ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
             return View(await _vendaService.FindAllAsync());
@@ -27,7 +25,6 @@ namespace Vendas.WebApp.Controllers
         //Create - Assincrono
         public async Task<IActionResult> Create()
         {
-            ViewBag.MessageId = HttpContext.Session.GetString("UserId");
             ViewBag.Message = HttpContext.Session.GetString("UserName");
             ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
             var comandas = await _comandaService.FindAllAsync();
@@ -42,9 +39,7 @@ namespace Vendas.WebApp.Controllers
             venda.Data = DateTime.Now.ToString();
             await _vendaService.InsertAsync(venda);
             return RedirectToAction("Create", "VendaProduto", new { VendaId = venda.Id });
-            //return RedirectToAction(nameof(Index));
         }
-
         //Details - Assincrono
         public async Task<IActionResult> Details(int? id)
         {
@@ -59,7 +54,6 @@ namespace Vendas.WebApp.Controllers
             }
             return View(venda);
         }
-
         //Delete - Assincrono
         public async Task<IActionResult> Delete(int? id)
         {
@@ -81,7 +75,6 @@ namespace Vendas.WebApp.Controllers
             await _vendaService.RemoveAsync(id);
             return RedirectToAction(nameof(Index));
         }
-
         //Edit - Assincrono
         public async Task<IActionResult> Edit(int? id)
         {

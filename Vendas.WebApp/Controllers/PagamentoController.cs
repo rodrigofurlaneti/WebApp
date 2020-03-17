@@ -20,7 +20,6 @@ namespace Vendas.WebApp.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            ViewBag.MessageId = HttpContext.Session.GetString("UserId");
             ViewBag.Message = HttpContext.Session.GetString("UserName");
             ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
             var comanda = await _ComandaService.FindAllAsync();

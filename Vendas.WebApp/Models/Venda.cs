@@ -6,7 +6,7 @@ namespace Vendas.WebApp.Models
         public int Id { get; set; }
         public string Data { get; set; }
         public int ComandaId { get; set; }
-        public int UserId { get; set; }
+        public string UserNome { get; set; }
         virtual public Comanda Comanda { get; set; }
     }
 }

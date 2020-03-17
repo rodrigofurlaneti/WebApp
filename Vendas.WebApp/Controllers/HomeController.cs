@@ -29,7 +29,6 @@ namespace Vendas.WebApp.Controllers
         {
             ViewBag.Message = HttpContext.Session.GetString("UserName");
             ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
-            ViewBag.MessageId = HttpContext.Session.GetString("UserId");
             return View();
         }
         //Create - Assincrono
@@ -43,11 +42,9 @@ namespace Vendas.WebApp.Controllers
             {
                 if (userBank[0].Senha == usuario.Senha)
                 {
-                    HttpContext.Session.SetString("UserId", userBank[0].Id.ToString());
                     HttpContext.Session.SetString("UserName", userBank[0].Nome);
                     HttpContext.Session.SetString("UserCargo", userBank[0].NomeCargo);
                     return RedirectToAction(nameof(Details));
-                    //return RedirectToAction("Details", "Usuario", new { UsuarioId = userBank[0].Id, UsuarioNome = userBank[0].Nome });
                 }
                 else
                 {
