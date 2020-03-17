@@ -14,14 +14,18 @@ namespace Vendas.WebApp.DAL
             try
             {
                 sqlConnection.Open();
-                string sql = "USE [estoque] SELECT [Senha] FROM [dbo].[Usuario] WHERE [Usuario].[Nome] = '"+user+"';";
+                string sql = "USE [estoque] SELECT .[dbo].[Usuario].[Id], [dbo].[Usuario].[Nome], [dbo].[Usuario].[Senha], [dbo].[Usuario].[IdCargo], [dbo].[Cargo].[Nome] as NomeCargo FROM [dbo].[Usuario] INNER JOIN[estoque].[dbo].[Cargo] ON[estoque].[dbo].[Usuario].[IdCargo] = [estoque].[dbo].[Cargo].[Id] WHERE[Usuario].[Nome] = '" + user+"';";
                 SqlCommand cmd = new SqlCommand(sql, sqlConnection);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     usuario.Add(new Usuario()
                     {
+                        Id = Convert.ToInt32(dr["Id"]),
+                        Nome = dr["Nome"].ToString(),
                         Senha = dr["Senha"].ToString(),
+                        IdCargo = Convert.ToInt32(dr["IdCargo"]),
+                        NomeCargo = dr["NomeCargo"].ToString(),
                     });
                 }
                 dr.Close();

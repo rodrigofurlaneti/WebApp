@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using Vendas.WebApp.Controllers.Exceptions;
@@ -18,11 +19,17 @@ namespace Vendas.WebApp.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            ViewBag.MessageId = HttpContext.Session.GetString("UserId");
+            ViewBag.Message = HttpContext.Session.GetString("UserName");
+            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
             return View(await _vendaService.FindAllAsync());
         }
         //Create - Assincrono
         public async Task<IActionResult> Create()
         {
+            ViewBag.MessageId = HttpContext.Session.GetString("UserId");
+            ViewBag.Message = HttpContext.Session.GetString("UserName");
+            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
             var comandas = await _comandaService.FindAllAsync();
             var viewModel = new VendaFormViewModels { Comandas = comandas };
             return View(viewModel);

@@ -28,8 +28,9 @@ namespace Vendas.WebApp
             });
             services.AddDbContext<ApplicationDbContext>(opitons => opitons.UseSqlServer("Server=.;Database=estoque;Trusted_Connection=True;MultipleActiveResultSets=true"));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDistributedMemoryCache(); // Adds a default in-memory implementation of IDistributedCache
+            services.AddSession();
             services.AddScoped<CargoService>();
             services.AddScoped<CategoriaService>();
             services.AddScoped<ClienteService>();
@@ -60,6 +61,7 @@ namespace Vendas.WebApp
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

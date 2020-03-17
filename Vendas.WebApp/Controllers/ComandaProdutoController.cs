@@ -16,6 +16,9 @@ namespace Vendas.WebApp.Controllers
         //Index - Assincrono
         public ActionResult Index()
         {
+            ViewBag.MessageId = HttpContext.Session.GetString("UserId");
+            ViewBag.Message = HttpContext.Session.GetString("UserName");
+            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
             return View();
         }
 

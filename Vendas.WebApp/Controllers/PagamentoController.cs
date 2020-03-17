@@ -5,6 +5,8 @@ using Vendas.WebApp.Models.ViewModels;
 using Vendas.WebApp.Service;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
+
 namespace Vendas.WebApp.Controllers
 {
     public class PagamentoController : Controller
@@ -18,6 +20,9 @@ namespace Vendas.WebApp.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            ViewBag.MessageId = HttpContext.Session.GetString("UserId");
+            ViewBag.Message = HttpContext.Session.GetString("UserName");
+            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
             var comanda = await _ComandaService.FindAllAsync();
             var viewModel = new PagamentoFormViewModels { Comanda = comanda };
             return View(viewModel);

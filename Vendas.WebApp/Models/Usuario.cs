@@ -12,5 +12,6 @@ namespace Vendas.WebApp.Models
         [Required(ErrorMessage = "Informe o senha do usuário!")]
         public string Senha { get; set; }
         public int IdCargo { get; set; }
+        public virtual string NomeCargo { get; set; }
     }
 }

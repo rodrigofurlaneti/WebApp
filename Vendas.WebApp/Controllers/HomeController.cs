@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Vendas.WebApp.Models;
 using Vendas.WebApp.Service;
@@ -25,6 +27,9 @@ namespace Vendas.WebApp.Controllers
         }
         public IActionResult Details()
         {
+            ViewBag.Message = HttpContext.Session.GetString("UserName");
+            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
+            ViewBag.MessageId = HttpContext.Session.GetString("UserId");
             return View();
         }
         //Create - Assincrono
@@ -33,13 +38,19 @@ namespace Vendas.WebApp.Controllers
         public IActionResult FindByUser(Usuario usuario)
         {
             string user = usuario.Nome;
-            var pass = usuarioService.FindByUser(user);
-            if (pass.Count > 0)
+            var userBank = usuarioService.FindByUser(user);
+            if (userBank.Count > 0)
             {
-                if (pass[0].Senha == usuario.Senha)
+                if (userBank[0].Senha == usuario.Senha)
                 {
+                    HttpContext.Session.SetString("UserId", userBank[0].Id.ToString());
+                    HttpContext.Session.SetString("UserName", userBank[0].Nome);
+                    HttpContext.Session.SetString("UserCargo", userBank[0].NomeCargo);
                     return RedirectToAction(nameof(Details));
-                }else{
+                    //return RedirectToAction("Details", "Usuario", new { UsuarioId = userBank[0].Id, UsuarioNome = userBank[0].Nome });
+                }
+                else
+                {
                     return RedirectToAction(nameof(Edit));
                 }
             }

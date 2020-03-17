@@ -20,8 +20,11 @@
                 <li><a asp-area="" asp-controller="Venda" asp-action="Index">Venda</a></li>
                 <li><a asp-area="" asp-controller="Pagamento" asp-action="Index">Pagamento</a></li>
                 <li><a asp-area="" asp-controller="Pedido" asp-action="Index">Pedido</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Index"><span class="glyphicon glyphicon-log-out"></span>Sair</a></li>
+                <li><a><span class="glyphicon glyphicon-user"></span> @ViewBag.Message</a></li>
+                <li><a><span class="glyphicon glyphicon-paperclip"></span> @ViewBag.Message1</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index"><span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
             </ul>
         </div>
     </div>
 </nav>
+<input name="UserId" id="UserId" type="hidden" value="@ViewBag.MessageId"/>

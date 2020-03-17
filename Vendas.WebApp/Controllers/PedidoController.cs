@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Vendas.WebApp.Service;
 namespace Vendas.WebApp.Controllers
 {
@@ -12,6 +13,9 @@ namespace Vendas.WebApp.Controllers
         //Index - Sincrono
         public IActionResult Index()
         {
+            ViewBag.MessageId = HttpContext.Session.GetString("UserId");
+            ViewBag.Message = HttpContext.Session.GetString("UserName");
+            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
             return View(_pedidoService.FindAll());
         }
     }
