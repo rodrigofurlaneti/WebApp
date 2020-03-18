@@ -18,20 +18,18 @@ namespace Vendas.WebApp.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            ViewBag.Message = HttpContext.Session.GetString("UserName");
-            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
+            Session();
             return View(await _vendaService.FindAllAsync());
         }
-        //Create - Assincrono
+        //Create - Assincrono - 1
         public async Task<IActionResult> Create()
         {
-            ViewBag.Message = HttpContext.Session.GetString("UserName");
-            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
+            Session();
             var comandas = await _comandaService.FindAllAsync();
             var viewModel = new VendaFormViewModels { Comandas = comandas };
             return View(viewModel);
         }
-        //Create - Assincrono
+        //Create - Assincrono - 2
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Vendas.WebApp.Models.Venda venda)
@@ -110,6 +108,11 @@ namespace Vendas.WebApp.Controllers
             {
                 return BadRequest();
             }
+        }
+        public void Session()
+        {
+            ViewBag.Message = HttpContext.Session.GetString("UserName");
+            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
         }
     }
 }

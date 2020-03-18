@@ -27,8 +27,7 @@ namespace Vendas.WebApp.Controllers
         }
         public IActionResult Details()
         {
-            ViewBag.Message = HttpContext.Session.GetString("UserName");
-            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
+            Session();
             return View();
         }
         //Create - Assincrono
@@ -52,6 +51,11 @@ namespace Vendas.WebApp.Controllers
                 }
             }
             return RedirectToAction(nameof(EditUser));
+        }
+        public void Session()
+        {
+            ViewBag.Message = HttpContext.Session.GetString("UserName");
+            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
         }
     }
 }

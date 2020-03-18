@@ -84,5 +84,6 @@ namespace Vendas.WebApp.Service
         {
             return usuariocontext.FindByUser(user);
         }
+
     }
 }

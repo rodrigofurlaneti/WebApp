@@ -20,8 +20,7 @@ namespace Vendas.WebApp.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            ViewBag.Message = HttpContext.Session.GetString("UserName");
-            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
+            Session();
             var comanda = await _ComandaService.FindAllAsync();
             var viewModel = new PagamentoFormViewModels { Comanda = comanda };
             return View(viewModel);
@@ -42,6 +41,11 @@ namespace Vendas.WebApp.Controllers
         public IActionResult Edit(Pagamento pagamento)
         {
             return View();
+        }
+        public void Session()
+        {
+            ViewBag.Message = HttpContext.Session.GetString("UserName");
+            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
         }
     }
 }

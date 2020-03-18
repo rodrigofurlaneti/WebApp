@@ -6,7 +6,8 @@ namespace Vendas.WebApp.DAL
 {
     public class PagamentoContext
     {
-        string _ConnectionString = "Server=.;Database=estoque;Trusted_Connection=True;MultipleActiveResultSets=true";
+        string _ConnectionString = "Server=.;Database=estoque;Trusted_Connection=False;MultipleActiveResultSets=true;";
+        //string _ConnectionString = "Server=47.254.54.175;Database=estoque;User Id=userbank;password=Mudar123;Trusted_Connection=False;MultipleActiveResultSets=true;";
         public List<Pagamento> ToListProdutosComanda(int id)
         {
             List<Pagamento> pagamento = new List<Pagamento>();

@@ -13,9 +13,13 @@ namespace Vendas.WebApp.Controllers
         //Index - Sincrono
         public IActionResult Index()
         {
+            Session();
+            return View(_pedidoService.FindAll());
+        }
+        public void Session()
+        {
             ViewBag.Message = HttpContext.Session.GetString("UserName");
             ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
-            return View(_pedidoService.FindAll());
         }
     }
 }

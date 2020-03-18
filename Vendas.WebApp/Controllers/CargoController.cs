@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Vendas.WebApp.Controllers.Exceptions;
 using Vendas.WebApp.Models;
@@ -16,12 +17,14 @@ namespace Vendas.WebApp.Controllers
         //Index - Assincrono
         public async Task<IActionResult> Index()
         {
+            Session();
             return View(await _cargoService.FindAllAsync());
         }
 
         //Create - Sincrono
         public IActionResult Create()
         {
+            Session();
             return View();
         }
 
@@ -106,6 +109,11 @@ namespace Vendas.WebApp.Controllers
             {
                 return BadRequest();
             }
+        }
+        public void Session()
+        {
+            ViewBag.Message = HttpContext.Session.GetString("UserName");
+            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
         }
     }
 }

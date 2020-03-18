@@ -16,8 +16,7 @@ namespace Vendas.WebApp.Controllers
         //Index - Assincrono
         public ActionResult Index()
         {
-            ViewBag.Message = HttpContext.Session.GetString("UserName");
-            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
+            Session();
             return View();
         }
 
@@ -32,6 +31,11 @@ namespace Vendas.WebApp.Controllers
                 return NotFound();
             }
             return View(comandaproduto);
+        }
+        public void Session()
+        {
+            ViewBag.Message = HttpContext.Session.GetString("UserName");
+            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
         }
     }
 }

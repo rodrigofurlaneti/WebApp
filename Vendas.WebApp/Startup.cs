@@ -26,10 +26,11 @@ namespace Vendas.WebApp
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            services.AddDbContext<ApplicationDbContext>(opitons => opitons.UseSqlServer("Server=.;Database=estoque;Trusted_Connection=True;MultipleActiveResultSets=true"));
+            services.AddDbContext<ApplicationDbContext>(opitons => opitons.UseSqlServer("Server=.;Database=estoque;Trusted_Connection=True;MultipleActiveResultSets=true;"));
+            //services.AddDbContext<ApplicationDbContext>(opitons => opitons.UseSqlServer("Server=47.254.54.175;Database=estoque;user Id=userbank;password=Mudar123;Trusted_Connection=False;MultipleActiveResultSets=true;"));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDistributedMemoryCache(); // Adds a default in-memory implementation of IDistributedCache
+            services.AddDistributedMemoryCache();
             services.AddSession();
             services.AddScoped<CargoService>();
             services.AddScoped<CategoriaService>();

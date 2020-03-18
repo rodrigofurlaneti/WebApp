@@ -20,14 +20,14 @@ namespace Vendas.WebApp.Controllers
         //Index - Assincrono
         public async Task<IActionResult> Index()
         {
-            ViewBag.Message = HttpContext.Session.GetString("UserName");
-            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
+            Session();
             return View(await _usuarioService.FindAllAsync());
         }
 
         //Create - Assincrono
         public async Task<IActionResult> Create()
         {
+            Session();
             var cargo = await _cargoService.FindAllAsync();
             var viewModel = new UsuarioFormViewModels { Cargo = cargo };
             return View(viewModel);
@@ -114,6 +114,11 @@ namespace Vendas.WebApp.Controllers
             {
                 return BadRequest();
             }
+        }
+        public void Session()
+        {
+            ViewBag.Message = HttpContext.Session.GetString("UserName");
+            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
         }
     }
 }

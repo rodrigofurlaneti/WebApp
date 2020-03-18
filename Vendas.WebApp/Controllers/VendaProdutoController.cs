@@ -19,8 +19,7 @@ namespace Vendas.WebApp.Controllers
         //Index - Assincrono
         public async Task<IActionResult> Index()
         {
-            ViewBag.Message = HttpContext.Session.GetString("UserName");
-            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
+            Session();
             return View(await _VendaProdutoService.FindAllAsync());
         }
         //Create - Assincrono
@@ -39,7 +38,7 @@ namespace Vendas.WebApp.Controllers
             return View(viewModel);
         }
 
-        //Create - Assincrono
+        //Create - Assincrono - 3
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(VendaProduto VendaProduto)
@@ -120,6 +119,11 @@ namespace Vendas.WebApp.Controllers
             {
                 return BadRequest();
             }
+        }
+        public void Session()
+        {
+            ViewBag.Message = HttpContext.Session.GetString("UserName");
+            ViewBag.Message1 = HttpContext.Session.GetString("UserCargo");
         }
     }
 }
