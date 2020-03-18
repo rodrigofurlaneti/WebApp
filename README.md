@@ -12,126 +12,10 @@
 ### Sql
 
 
-```sh
-USE [master]
-GO
-
-/****** Object:  Database [estoque]    Script Date: 27/02/2020 17:01:05 ******/
-CREATE DATABASE [estoque]
- CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'estoque', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\estoque.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- LOG ON 
-( NAME = N'estoque_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\estoque_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
-GO
-
-IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-begin
-EXEC [estoque].[dbo].[sp_fulltext_database] @action = 'enable'
-end
-GO
-
-ALTER DATABASE [estoque] SET ANSI_NULL_DEFAULT OFF 
-GO
-
-ALTER DATABASE [estoque] SET ANSI_NULLS OFF 
-GO
-
-ALTER DATABASE [estoque] SET ANSI_PADDING OFF 
-GO
-
-ALTER DATABASE [estoque] SET ANSI_WARNINGS OFF 
-GO
-
-ALTER DATABASE [estoque] SET ARITHABORT OFF 
-GO
-
-ALTER DATABASE [estoque] SET AUTO_CLOSE OFF 
-GO
-
-ALTER DATABASE [estoque] SET AUTO_SHRINK OFF 
-GO
-
-ALTER DATABASE [estoque] SET AUTO_UPDATE_STATISTICS ON 
-GO
-
-ALTER DATABASE [estoque] SET CURSOR_CLOSE_ON_COMMIT OFF 
-GO
-
-ALTER DATABASE [estoque] SET CURSOR_DEFAULT  GLOBAL 
-GO
-
-ALTER DATABASE [estoque] SET CONCAT_NULL_YIELDS_NULL OFF 
-GO
-
-ALTER DATABASE [estoque] SET NUMERIC_ROUNDABORT OFF 
-GO
-
-ALTER DATABASE [estoque] SET QUOTED_IDENTIFIER OFF 
-GO
-
-ALTER DATABASE [estoque] SET RECURSIVE_TRIGGERS OFF 
-GO
-
-ALTER DATABASE [estoque] SET  DISABLE_BROKER 
-GO
-
-ALTER DATABASE [estoque] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
-GO
-
-ALTER DATABASE [estoque] SET DATE_CORRELATION_OPTIMIZATION OFF 
-GO
-
-ALTER DATABASE [estoque] SET TRUSTWORTHY OFF 
-GO
-
-ALTER DATABASE [estoque] SET ALLOW_SNAPSHOT_ISOLATION OFF 
-GO
-
-ALTER DATABASE [estoque] SET PARAMETERIZATION SIMPLE 
-GO
-
-ALTER DATABASE [estoque] SET READ_COMMITTED_SNAPSHOT OFF 
-GO
-
-ALTER DATABASE [estoque] SET HONOR_BROKER_PRIORITY OFF 
-GO
-
-ALTER DATABASE [estoque] SET RECOVERY FULL 
-GO
-
-ALTER DATABASE [estoque] SET  MULTI_USER 
-GO
-
-ALTER DATABASE [estoque] SET PAGE_VERIFY CHECKSUM  
-GO
-
-ALTER DATABASE [estoque] SET DB_CHAINING OFF 
-GO
-
-ALTER DATABASE [estoque] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
-GO
-
-ALTER DATABASE [estoque] SET TARGET_RECOVERY_TIME = 60 SECONDS 
-GO
-
-ALTER DATABASE [estoque] SET DELAYED_DURABILITY = DISABLED 
-GO
-
-ALTER DATABASE [estoque] SET QUERY_STORE = OFF
-GO
-
-ALTER DATABASE [estoque] SET  READ_WRITE 
-GO
-
-```
-
-Tabelas
-```sh
 USE [estoque]
 GO
 
-/****** Object:  Table [dbo].[Cargo]    Script Date: 27/02/2020 17:03:05 ******/
+/****** Object:  Table [dbo].[Cargo]    Script Date: 17/03/2020 23:37:39 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -147,10 +31,11 @@ CREATE TABLE [dbo].[Cargo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
 USE [estoque]
 GO
 
-/****** Object:  Table [dbo].[Categoria]    Script Date: 27/02/2020 17:03:48 ******/
+/****** Object:  Table [dbo].[Categoria]    Script Date: 17/03/2020 23:38:12 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -158,18 +43,19 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[Categoria](
-	[Codigo] [int] IDENTITY(1,1) NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Nome] [varchar](50) NOT NULL,
  CONSTRAINT [PK_Categoria] PRIMARY KEY CLUSTERED 
 (
-	[Codigo] ASC
+	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
 USE [estoque]
 GO
 
-/****** Object:  Table [dbo].[Cliente]    Script Date: 27/02/2020 17:04:07 ******/
+/****** Object:  Table [dbo].[Cliente]    Script Date: 17/03/2020 23:38:30 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -188,10 +74,12 @@ CREATE TABLE [dbo].[Cliente](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
 USE [estoque]
 GO
 
-/****** Object:  Table [dbo].[Comanda]    Script Date: 27/02/2020 17:04:26 ******/
+/****** Object:  Table [dbo].[Comanda]    Script Date: 17/03/2020 23:38:47 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -202,16 +90,42 @@ CREATE TABLE [dbo].[Comanda](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[ClienteId] [int] NULL,
 	[Data] [varchar](50) NULL,
+	[Status] [varchar](7) NULL,
  CONSTRAINT [PK_Comanda] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
 USE [estoque]
 GO
 
-/****** Object:  Table [dbo].[Produto]    Script Date: 27/02/2020 17:04:40 ******/
+/****** Object:  Table [dbo].[Pagamento]    Script Date: 17/03/2020 23:39:23 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Pagamento](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ComandaId] [int] NULL,
+	[ValorTotal] [decimal](8, 2) NULL,
+	[DataPagamento] [varchar](50) NULL,
+ CONSTRAINT [PK_Pagamento] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+USE [estoque]
+GO
+
+/****** Object:  Table [dbo].[Produto]    Script Date: 17/03/2020 23:39:40 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -230,10 +144,12 @@ CREATE TABLE [dbo].[Produto](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
 USE [estoque]
 GO
 
-/****** Object:  Table [dbo].[Usuario]    Script Date: 27/02/2020 17:04:51 ******/
+/****** Object:  Table [dbo].[Usuario]    Script Date: 17/03/2020 23:39:54 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -252,10 +168,11 @@ CREATE TABLE [dbo].[Usuario](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
 USE [estoque]
 GO
 
-/****** Object:  Table [dbo].[Venda]    Script Date: 27/02/2020 17:05:07 ******/
+/****** Object:  Table [dbo].[Venda]    Script Date: 17/03/2020 23:40:15 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -265,17 +182,20 @@ GO
 CREATE TABLE [dbo].[Venda](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Data] [varchar](50) NULL,
-	[ClienteId] [int] NULL,
+	[UserNome] [varchar](50) NULL,
+	[ComandaId] [int] NULL,
  CONSTRAINT [PK_Venda] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
 USE [estoque]
 GO
 
-/****** Object:  Table [dbo].[VendaProduto]    Script Date: 27/02/2020 17:05:20 ******/
+/****** Object:  Table [dbo].[VendaProduto]    Script Date: 17/03/2020 23:40:34 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -287,12 +207,11 @@ CREATE TABLE [dbo].[VendaProduto](
 	[VendaId] [int] NULL,
 	[ProdutoId] [int] NULL,
 	[Quantidade] [int] NULL,
+	[Valor] [decimal](8, 2) NULL,
  CONSTRAINT [PK_VendaProduto] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-```
-
 
