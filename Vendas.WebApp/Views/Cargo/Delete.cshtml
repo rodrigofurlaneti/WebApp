@@ -2,8 +2,8 @@
 @{
     ViewData["Title"] = "Apagar Cargo";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Apagar Cargo</h2>
-
 <h5 class="display-4">Tem certeza que deseja apagar a Cargo @Html.DisplayFor(Model => Model.Nome)?</h5>
 <form asp-action="Delete">
     <input type="submit" value="Apagar" class="btn btn-sm btn-danger" />

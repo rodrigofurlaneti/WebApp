@@ -48,6 +48,8 @@ namespace Vendas.WebApp
             services.AddScoped<ComandaProdutoService>();
             services.AddScoped<ComandaProdutoContext>();
             services.AddScoped<UsuarioContext>();
+            services.AddScoped<CompraContext>();
+            services.AddScoped<CompraService>();
         }
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {

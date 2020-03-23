@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Vendas.WebApp.Models.Compra>;
+@using System;
+@using System.Globalization;
+@{
+    ViewData["Title"] = "Lista de comprar";
+}
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
+<h2 class="display-4">Lista de compras</h2>
+<table class="table" id="myTable">
+    <thead>
+        <tr class="col-12">
+            <th>
+                Produto
+            </th>
+            <th>
+                Quantidade mínima
+            </th>
+            <th>
+                Quantidade no estoque
+            </th>
+            <th>
+                Quantidade para comprar
+            </th>
+            <th>
+                Valor unitário
+            </th>
+            <th>
+                Valor total
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+{
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantidadeMinima)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantidadeCompra)
+                    @{int quantidade = Convert.ToInt32(item.QuantidadeCompra); }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorCustoUnitario)
+                    @{double valorcustounitario = Convert.ToDouble(item.ValorCustoUnitario); }
+                </td>
+                <td>
+                    @{  double total = valorcustounitario * quantidade;}
+                    @total.ToString(@"#\.##", CultureInfo.InvariantCulture)
+                </td>
+            </tr>
+    }
+    </tbody>
+</table>

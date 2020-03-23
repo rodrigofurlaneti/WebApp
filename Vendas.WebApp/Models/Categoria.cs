@@ -5,7 +5,6 @@ namespace Vendas.WebApp.Models
     {
         [Key]
         public int Id { get; set; }
-
         [Required(ErrorMessage = "Informe o nome da categoria!")]
         public string Nome { get; set; }
     }

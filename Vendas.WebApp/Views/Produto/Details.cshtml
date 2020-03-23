@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Detalhar produto";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Detalhar produto</h2>
 <div>
     <hr />
@@ -19,16 +20,52 @@
             @Html.DisplayFor(model => model.Produto.Nome)
         </dd>
         <dt>
-            Qunatidade
+            Quantidade no estoque
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Produto.Quantidade)
         </dd>
         <dt>
-            Valor
+            Quantidade mínima no estoque
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produto.QuantidadeMinima)
+        </dd>
+        <dt>
+            Valor venda
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Produto.Valor)
+        </dd>
+        <dt>
+            Valor custo unitário
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produto.ValorCustoUnitario)
+        </dd>
+        <dt>
+            Valor custo total
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produto.ValorCustoTotal)
+        </dd>
+        <dt>
+            Valor lucro unitário
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produto.ValorLucroUnitario)
+        </dd>
+        <dt>
+            Valor lucro total
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produto.ValorLucroTotal)
+        </dd>
+        <dt>
+            Valor bruto
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Produto.ValorBruto)
         </dd>
         <dt>
             Categoria

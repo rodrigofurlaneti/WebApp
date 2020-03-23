@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Editar categoria";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <form asp-action="Edit">
     <input asp-for="@Model.Id" type="hidden" class="form-control form-control-sm" />
     <div class="form-row">

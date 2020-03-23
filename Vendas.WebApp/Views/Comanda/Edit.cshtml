@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Editar comanda";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Editar comanda</h2>
 <form asp-action="Edit">
     <input asp-for="@Model.Comanda.Id" type="hidden" class="form-control form-control-sm" />
@@ -9,7 +10,7 @@
         <div class="form-group-sm col-md-2">
             <div class="form-group">
                 <label asp-for="@Model.Comanda.Id" class="control-label">Comanda número:</label>
-                <input asp-for="@Model.Comanda.Id" type="text" class="form-control form-control-sm" disabled/>
+                <input asp-for="@Model.Comanda.Id" type="text" class="form-control form-control-sm" disabled />
             </div>
         </div>
         <div class="form-group-sm col-md-10">

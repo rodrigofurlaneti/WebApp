@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Editar Produto";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Editar Produto</h2>
 <form asp-action="Edit">
     <input asp-for="@Model.Produto.Id" type="hidden" class="form-control form-control-sm" />
@@ -13,25 +14,69 @@
                 <span asp-validation-for="@Model.Produto.Nome" class="text-danger"></span>
             </div>
         </div>
-        <div class="form-group-sm col-md-3">
+        <div class="form-group-sm col-md-2">
             <div class="form-group">
-                <label asp-for="@Model.Produto.Quantidade" class="control-label">Quantidade:</label>
+                <label asp-for="@Model.Produto.Quantidade" class="control-label">Quant. estoque:</label>
                 <input asp-for="@Model.Produto.Quantidade" maxlength="11" class="form-control form-control-sm" />
                 <span asp-validation-for="@Model.Produto.Quantidade" class="text-danger"></span>
             </div>
         </div>
-        <div class="form-group-sm col-md-3">
+        <div class="form-group-sm col-md-2">
             <div class="form-group">
-                <label asp-for="@Model.Produto.Valor" class="control-label">Valor:</label>
+                <label asp-for="@Model.Produto.QuantidadeMinima" class="control-label">Quant. mínima:</label>
+                <input asp-for="@Model.Produto.QuantidadeMinima" maxlength="11" class="form-control form-control-sm" />
+                <span asp-validation-for="@Model.Produto.QuantidadeMinima" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group-sm col-md-2">
+            <div class="form-group">
+                <label asp-for="@Model.Produto.Valor" class="control-label">Valor venda:</label>
                 <input asp-for="@Model.Produto.Valor" class="form-control form-control-sm" />
                 <span asp-validation-for="@Model.Produto.Valor" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group-sm col-md-3">
             <div class="form-group">
-                <label asp-for="@Model.Produto.CodigoCategoria" class="control-label">Categoria:</label>
-                <select asp-for="@Model.Produto.CodigoCategoria" asp-items="@(new SelectList(Model.Categoria,"Codigo","Nome"))" class="form-control form-control-sm"></select>
-                <span asp-validation-for="@Model.Produto.CodigoCategoria" class="text-danger"></span>
+                <label asp-for="@Model.Produto.IdCategoria" class="control-label">Categoria:</label>
+                <select asp-for="@Model.Produto.IdCategoria" asp-items="@(new SelectList(Model.Categoria,"Id","Nome"))" class="form-control form-control-sm"></select>
+                <span asp-validation-for="@Model.Produto.IdCategoria" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group-sm col-md-3">
+            <div class="form-group">
+                <label asp-for="@Model.Produto.ValorCustoUnitario" class="control-label">Valor custo unitário:</label>
+                <input asp-for="@Model.Produto.ValorCustoUnitario" class="form-control form-control-sm" />
+                <span asp-validation-for="@Model.Produto.ValorCustoUnitario" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group-sm col-md-3">
+            <div class="form-group">
+                <label asp-for="@Model.Produto.ValorCustoTotal" class="control-label">Valor custo total:</label>
+                <input asp-for="@Model.Produto.ValorCustoTotal" class="form-control form-control-sm" />
+                <span asp-validation-for="@Model.Produto.ValorCustoTotal" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group-sm col-md-2">
+            <div class="form-group">
+                <label asp-for="@Model.Produto.ValorLucroUnitario" class="control-label">Valor lucro unitário:</label>
+                <input asp-for="@Model.Produto.ValorLucroUnitario" class="form-control form-control-sm" />
+                <span asp-validation-for="@Model.Produto.ValorLucroUnitario" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group-sm col-md-2">
+            <div class="form-group">
+                <label asp-for="@Model.Produto.ValorLucroTotal" class="control-label">Valor lucro total:</label>
+                <input asp-for="@Model.Produto.ValorLucroTotal" class="form-control form-control-sm" />
+                <span asp-validation-for="@Model.Produto.ValorLucroTotal" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group-sm col-md-2">
+            <div class="form-group">
+                <label asp-for="@Model.Produto.ValorBruto" class="control-label">Valor bruto:</label>
+                <input asp-for="@Model.Produto.ValorBruto" class="form-control form-control-sm" />
+                <span asp-validation-for="@Model.Produto.ValorBruto" class="text-danger"></span>
             </div>
         </div>
     </div>

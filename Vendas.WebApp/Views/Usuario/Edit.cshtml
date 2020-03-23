@@ -2,9 +2,10 @@
 @{
     ViewData["Title"] = "Editar usuario";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Editar usuario</h2>
 <form asp-action="Edit">
-    <input asp-for="@Model.Id type="hidden" class="form-control form-control-sm" />
+    <input asp-for="@Model.Id type=" hidden" class="form-control form-control-sm" />
     <div class="form-row">
         <div class="form-group-sm col-md-4">
             <div class="form-group">

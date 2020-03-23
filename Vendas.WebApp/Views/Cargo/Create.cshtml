@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Adicionar cargo";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Adicionar Cargo</h2>
 <form asp-action="Create">
     <input asp-for="@Model.Id" type="hidden" class="form-control form-control-sm" />

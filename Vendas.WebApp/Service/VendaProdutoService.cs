@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -40,9 +41,12 @@ namespace Vendas.WebApp.Service
         {
             int idProduto = vendaproduto.ProdutoId;
             int quantProdutoPedido = vendaproduto.Quantidade;
-            produtocontext.DeleteProduto(idProduto, quantProdutoPedido);
-            decimal valor = produtocontext.ValorUnitario(idProduto);
-            vendaproduto.Valor = valor * quantProdutoPedido;
+            produtocontext.UpdateProduto(idProduto, quantProdutoPedido);
+            string valor = produtocontext.ValorUnitario(idProduto);
+            decimal v = Convert.ToDecimal(valor);
+            decimal t = v * quantProdutoPedido;
+            string total = Convert.ToString(t);
+            vendaproduto.Valor =  total;
             context.Add(vendaproduto);
             await context.SaveChangesAsync();
         }

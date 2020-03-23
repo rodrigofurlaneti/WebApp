@@ -151,12 +151,12 @@ C:\Users\Administrador\source\repos\Venda\WebApp\Vendas.WebApp\obj\Debug\netcore
 C:\Users\Administrador\source\repos\Venda\WebApp\Vendas.WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Pagamento\Details.g.cshtml.cs
 C:\Users\Administrador\source\repos\Venda\WebApp\Vendas.WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Pagamento\Edit.g.cshtml.cs
 C:\Users\Administrador\source\repos\Venda\WebApp\Vendas.WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Pagamento\Index.g.cshtml.cs
-C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\obj\Debug\netcoreapp2.1\Vendas.WebApp.csprojAssemblyReference.cache
 C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\obj\Debug\netcoreapp2.1\Vendas.WebApp.csproj.CoreCompileInputs.cache
 C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\obj\Debug\netcoreapp2.1\Vendas.WebApp.RazorAssemblyInfo.cache
 C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\obj\Debug\netcoreapp2.1\Vendas.WebApp.RazorAssemblyInfo.cs
 C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\obj\Debug\netcoreapp2.1\Vendas.WebApp.AssemblyInfoInputs.cache
 C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\obj\Debug\netcoreapp2.1\Vendas.WebApp.AssemblyInfo.cs
+C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\obj\Debug\netcoreapp2.1\Vendas.WebApp.csprojAssemblyReference.cache
 C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\bin\Debug\netcoreapp2.1\Vendas.WebApp.deps.json
 C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\bin\Debug\netcoreapp2.1\Vendas.WebApp.runtimeconfig.json
 C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\bin\Debug\netcoreapp2.1\Vendas.WebApp.runtimeconfig.dev.json
@@ -229,3 +229,4 @@ C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\obj\Debug\netcore
 C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\obj\Debug\netcoreapp2.1\Vendas.WebApp.dll
 C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\obj\Debug\netcoreapp2.1\Vendas.WebApp.pdb
 C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\obj\Debug\netcoreapp2.1\Vendas.WebApp.csproj.CopyComplete
+C:\Users\Administrador\source\repos\Venda\Vendas\Vendas.WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Compra\Index.g.cshtml.cs

@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Apagar Cliente";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Apagar Cliente</h2>
 
 <h5 class="display-4">Tem certeza que deseja apagar o cliente @Html.DisplayFor(Model => Model.Nome)?</h5>

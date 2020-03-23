@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Apagar venda produto";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Apagar venda produto</h2>
 <h5 class="display-4">Tem certeza que deseja apagar a venda produto id número @Html.DisplayFor(Model => Model.Id)?</h5>
 <form asp-action="Delete">

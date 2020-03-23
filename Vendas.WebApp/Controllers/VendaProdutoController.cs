@@ -33,6 +33,7 @@ namespace Vendas.WebApp.Controllers
         //Create - Assincrono
         public async Task<IActionResult> CreateAdd()
         {
+            Session();
             var produto = await _ProdutoService.FindAllAsync();
             var viewModel = new VendaProdutoFormViewModels { Produto = produto };
             return View(viewModel);

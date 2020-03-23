@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Adicionar comanda";
 }
+@await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Adicionar comanda</h2>
 <form asp-action="Create">
     <input asp-for="@Model.Comanda.Id" type="hidden" class="form-control form-control-sm" />

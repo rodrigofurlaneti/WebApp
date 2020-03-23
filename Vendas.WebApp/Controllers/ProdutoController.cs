@@ -56,7 +56,7 @@ namespace Vendas.WebApp.Controllers
             {
                 return NotFound();
             }
-            int codigocategoria = produto.CodigoCategoria;
+            int codigocategoria = produto.IdCategoria;
             var categoriaObj = _CategoriaService.FindById(codigocategoria);
             ProdutoFormViewModels viewModel = new ProdutoFormViewModels
             {

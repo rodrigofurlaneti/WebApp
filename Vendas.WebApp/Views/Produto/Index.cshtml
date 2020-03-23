@@ -24,10 +24,28 @@
                 Nome
             </th>
             <th>
-                Quantidade
+                Quant. Estoque
             </th>
             <th>
-                Valor
+                Quant. Mínima
+            </th>
+            <th>
+                Valor venda
+            </th>
+            <th>
+                Valor custo unitário
+            </th>
+            <th>
+                Valor custo total
+            </th>
+            <th>
+                Valor lucro unitário
+            </th>
+            <th>
+                Valor lucro total
+            </th>
+            <th>
+                Valor bruto
             </th>
             <th>
                 Detalhar
@@ -55,7 +73,25 @@
                     @Html.DisplayFor(modelItem => item.Quantidade)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.QuantidadeMinima)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorCustoUnitario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorCustoTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorLucroUnitario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorLucroTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorBruto)
                 </td>
                 <td>
                     <a asp-action="Details" class="btn btn-sm btn-warning" asp-route-id="@item.Id">Detalhar</a>
