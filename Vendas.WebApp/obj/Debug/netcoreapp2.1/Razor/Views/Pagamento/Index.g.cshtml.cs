@@ -76,12 +76,12 @@ Write(await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml"));
             WriteLiteral("\r\n<h2 class=\"display-4\">Pagamento</h2>\r\n");
             EndContext();
             BeginContext(211, 939, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91306ee23ae64b66b4fa97796448dc14", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5861b3eeedb140d3a0677d0e1a17a8e3", async() => {
                 BeginContext(238, 131, true);
                 WriteLiteral("\r\n    <div class=\"form-row\">\r\n        <div class=\"form-group-sm col-md-12\">\r\n            <div class=\"form-group\">\r\n                ");
                 EndContext();
                 BeginContext(369, 92, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "92e5068222794a0c84a2b3631ed43819", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "33ac90edd80b4c769f686126c72a9a7f", async() => {
                     BeginContext(435, 18, true);
                     WriteLiteral("Número da comanda:");
                     EndContext();
@@ -108,7 +108,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n                ");
                 EndContext();
                 BeginContext(479, 146, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "516567fd294c4e6a94f49c73bd8f7fb4", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "924a7ffeedd64a289851e989d1361b08", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
@@ -138,7 +138,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = (new SelectList(Mo
                 WriteLiteral("\r\n                ");
                 EndContext();
                 BeginContext(643, 81, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c46e00784a8b4576b94a6461ca1b7557", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f75ebb54cc0b487c9839257b12a555e4", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
@@ -162,7 +162,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"form-row botao\">\r\n        <div class=\"col-md-11\">\r\n            ");
                 EndContext();
                 BeginContext(853, 129, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cce3032d08b949ec8563e95ca379389f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b3d828ae0f0b4f7bb698a068f74f69b4", async() => {
                     BeginContext(875, 103, true);
                     WriteLiteral("\r\n                <input type=\"button\" value=\"Voltar\" class=\"btn btn-sm btn-secondary\" />\r\n            ");
                     EndContext();

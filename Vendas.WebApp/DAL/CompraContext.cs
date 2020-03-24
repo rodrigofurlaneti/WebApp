@@ -21,15 +21,18 @@ namespace Vendas.WebApp.DAL
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    Compra.Add(new Compra()
+                    if (Convert.ToInt32(dr["QuantidadeCompra"]) > 0)
                     {
-                        Produto = dr["Produto"].ToString(),
-                        Quantidade = Convert.ToInt32(dr["Quantidade"]),
-                        QuantidadeMinima = Convert.ToInt32(dr["QuantidadeMinima"]),
-                        QuantidadeCompra = dr["QuantidadeCompra"].ToString(),
-                        ValorCustoUnitario = dr["ValorCustoUnitario"].ToString(),
-                        ValorCustoTotal = dr["ValorCustoTotal"].ToString(),
-                    });
+                        Compra.Add(new Compra()
+                        {
+                            Produto = dr["Produto"].ToString(),
+                            Quantidade = Convert.ToInt32(dr["Quantidade"]),
+                            QuantidadeMinima = Convert.ToInt32(dr["QuantidadeMinima"]),
+                            QuantidadeCompra = dr["QuantidadeCompra"].ToString(),
+                            ValorCustoUnitario = dr["ValorCustoUnitario"].ToString(),
+                            ValorCustoTotal = dr["ValorCustoTotal"].ToString(),
+                        });
+                    }
                 }
                 dr.Close();
                 return Compra;

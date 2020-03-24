@@ -6,7 +6,7 @@
 }
 @await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml")
 <h2 class="display-4">Lista de compras</h2>
-<table class="table" id="myTable">
+<table class="table" id="myTable" id="table">
     <thead>
         <tr class="col-12">
             <th>
@@ -29,9 +29,9 @@
             </th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="tbody">
         @foreach (var item in Model)
-{
+        {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Produto)
@@ -51,10 +51,26 @@
                     @{double valorcustounitario = Convert.ToDouble(item.ValorCustoUnitario); }
                 </td>
                 <td>
-                    @{  double total = valorcustounitario * quantidade;}
+                    @{ double total = valorcustounitario * quantidade;}
                     @total.ToString(@"#\.##", CultureInfo.InvariantCulture)
                 </td>
             </tr>
-    }
+        }
     </tbody>
 </table>
+<script>
+    window.onload = start();
+    function start() {
+        var tbody = document.getElementById("tbody");
+        console.log(tbody);
+        var tr = tbody.getElementsByTagName('tr');
+        console.log(tr);
+        var arr = [];
+        for (var i = 0; i < tr.length; i++){
+            arr.push(tr[i].cells[5].textContent)
+        }
+            console.log(arr);
+        
+    }
+</script>
+   

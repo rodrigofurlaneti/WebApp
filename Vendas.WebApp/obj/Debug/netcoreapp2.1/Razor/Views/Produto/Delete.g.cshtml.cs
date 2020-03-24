@@ -81,7 +81,7 @@ Write(await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml"));
             WriteLiteral("?</h5>\r\n");
             EndContext();
             BeginContext(300, 109, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2cc677271a5b415884d963fd09ee8882", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e4b7b924fcf04032ad8bb01ccbce7532", async() => {
                 BeginContext(326, 76, true);
                 WriteLiteral("\r\n    <input type=\"submit\" value=\"Apagar\" class=\"btn btn-sm btn-danger\" />\r\n");
                 EndContext();
@@ -105,7 +105,7 @@ Write(await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml"));
             WriteLiteral("\r\n<div>\r\n    ");
             EndContext();
             BeginContext(422, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "08618fdd1d8e44f0887e67f8a9291b6c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8e333dfa65840aa88bf2cc44168adbd", async() => {
                 BeginContext(477, 6, true);
                 WriteLiteral("Voltar");
                 EndContext();

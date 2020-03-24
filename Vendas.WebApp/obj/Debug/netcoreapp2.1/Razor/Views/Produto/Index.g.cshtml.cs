@@ -76,7 +76,7 @@ Write(await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml"));
             WriteLiteral("\r\n<h2 class=\"display-4\">Produto</h2>\r\n<p>\r\n    ");
             EndContext();
             BeginContext(202, 49, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "763104b76d764a75a196128612186df2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5c38b6737ff6411bbbdbfbc6eafa671f", async() => {
                 BeginContext(225, 22, true);
                 WriteLiteral("Adicionar nova Produto");
                 EndContext();
@@ -98,7 +98,7 @@ Write(await Html.PartialAsync("~/Views/Shared/_PartialNav.cshtml"));
             WriteLiteral("\r\n</p>\r\n");
             EndContext();
             BeginContext(259, 313, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a369cc7dabe491498f3d9dd3d52c5be", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b25b35a0998450a9d38419c8c1d0834", async() => {
                 BeginContext(285, 280, true);
                 WriteLiteral(@"
     <div class=""form-group mb-2"">
@@ -295,7 +295,7 @@ WriteAttributeValue("", 1649, item.Id, 1649, 8, false);
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(2847, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d68a3c65a634e9f80dbcec87243cdcd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "471d89171a2c4c948d029140113282f4", async() => {
                 BeginContext(2926, 8, true);
                 WriteLiteral("Detalhar");
                 EndContext();
@@ -331,7 +331,7 @@ WriteAttributeValue("", 1649, item.Id, 1649, 8, false);
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(3005, 83, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a7f9aa2b0df45a79828fdecaa2f6189", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d1218145c2e40d5bf0b2aef25bc7a01", async() => {
                 BeginContext(3078, 6, true);
                 WriteLiteral("Editar");
                 EndContext();
@@ -367,7 +367,7 @@ WriteAttributeValue("", 1649, item.Id, 1649, 8, false);
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(3155, 87, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cfdaefb992754e6198d0160c33c3c338", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da04b869a7c94b3e99e8da5c5d925bf1", async() => {
                 BeginContext(3232, 6, true);
                 WriteLiteral("Apagar");
                 EndContext();
